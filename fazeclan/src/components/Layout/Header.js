@@ -2,9 +2,13 @@ import React from 'react'
 
 function Header() {
     return (
-        <div>
+        <header>
             <h1>Github Club</h1>
-        </div>
+            <form>
+            <input type="text" name="searchusers" placeholder="search users"></input>
+            <input type="submit"></input>
+            </form>
+        </header>
     )
 }
 
