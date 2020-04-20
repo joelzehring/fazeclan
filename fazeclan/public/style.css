@@ -1,0 +1,9 @@
+body {
+    background-color: gray;
+}
+
+.gc_nav {
+    background-color: rgb(70, 70, 70);
+    border-bottom: 3px solid white;
+    width: 100vw;
+}
