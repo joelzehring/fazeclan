@@ -1,10 +1,5 @@
 import React from "react"
 
-
-const searchButtonStyle = {
-  color: 'white'
-}
-
 function Search() {
   return (
     <form className="form-inline my-2 my-lg-0">

@@ -16,16 +16,16 @@ const activeUserStyle = {
 
  function ActiveUser() {
     return (
-        
-            <div className="row" style={activeUserStyle}>
+            
+            <div className="row active-user" style={activeUserStyle}>
                 <div className="col-sm-9">
-            <h2>YourName</h2>
-            <h3>Rank: 1000</h3>
-            <h4>***</h4>
-            </div>
-            <div className="col-sm-3 float-sm-right">
-            <img src="http://lorempixel.com/200/200" alt="Placeholder Pic"/>
-            </div>
+                    <h2>YourName</h2>
+                    <h3>Rank: 1000</h3>
+                    <h4>***</h4>
+                </div>
+                <div className="col-sm-3 float-sm-right">
+                    <img src="http://lorempixel.com/200/200" alt="Placeholder Pic"/>
+                </div>
             </div>
         
     )
