@@ -1,6 +1,6 @@
 import React from "react";
 import Search from './Search'
-const Logo = require('./gitclub_logo.png');
+const Logo = require('../../images/gitclub_logo.png');
 
 
 const containerStyle = {
@@ -28,7 +28,7 @@ function Wrapper(props) {
           </a>
           
           <div>
-            {Search}
+            <Search/> 
           </div>
         </div>
         
