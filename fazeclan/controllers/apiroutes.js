@@ -11,9 +11,10 @@ axios({
           }
         }
       }
-
-  
 })
+.then((result) => {
+    console.log(result.data);
+});
 
 
 // API CALL TO GET NUMBER OF COMMITS THROUGH REST API
