@@ -1,19 +1,27 @@
 const axios = require("../client/node_modules/axios");
 
-axios({
-    url: "https://api.github.com/graphql",
-    method: "POST",
-    data: {
-        viewer: {
-          login: "sharkrachel",
-          contributionsCollection: {
-            totalCommitContributions: 442
-          }
-        }
-      }
+function apiRoute(app) {
+    app.get("/api/github/:user", function (req, res) {
+        axios({
+            url: "https://api.github.com/graphql",
+            method: "POST",
+            data: {
+                viewer: {
+                    login: "sharkrachel",
+                    contributionsCollection: {
+                        totalCommitContributions: 442
+                    }
+                }
+            }
+        })
+            .then((result) => {
+                console.log(result.data);
+            });
 
-  
-})
+    })
+}
+
+module.exports = apiRoute;
 
 
 // API CALL TO GET NUMBER OF COMMITS THROUGH REST API
