@@ -26,8 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 passport.use(new Strategy({
-  clientID: "a07ebdfd14dc7f6062e6",
-  clientSecret: "ee1854f93bf397a6b40d1f8b0b1936e9acd73583",
+  clientID: keys.GITHUB_CLIENT_ID,
+  clientSecret: keys.GITHUB_CLIENT_SECRET,
   callbackURL: '/auth/github/redirect',
   proxy: trustProxy
 },function(){console.log("logging")}));
