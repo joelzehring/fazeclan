@@ -5,7 +5,7 @@ import ActiveUser from './components/Layout/ActiveUser'
 import TopUser from './components/Layout/TopUser'
 import UserFavorites from './components/Layout/UserFavorites'
 import Form from './components/UserForm/Form'
-
+import FormModal from './components/UserForm/FormModal'
 
 class App extends Component {
   render() {
@@ -13,10 +13,8 @@ class App extends Component {
         <Wrapper>
           <div className="container">
             <ActiveUser />
-            <Form />
             <UserFavorites />
             <TopUser />
-            
           </div>
         </Wrapper>
     );

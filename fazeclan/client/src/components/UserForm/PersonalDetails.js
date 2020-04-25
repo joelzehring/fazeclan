@@ -18,7 +18,7 @@ export class PersonalDetails extends Component {
             <div>
                 <MuiThemeProvider>
                 <React.Fragment>
-                    <h1>Update Your Profile</h1>  />
+                    <h1>Update Your Profile</h1>
                         <TextField
                         hintText="City of operation"
                         floatingLabelText="City"
