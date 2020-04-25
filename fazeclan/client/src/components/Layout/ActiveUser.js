@@ -1,5 +1,5 @@
 import React from 'react'
-
+import FormModal from '../UserForm/FormModal'
 const activeUserStyle = {
     color: 'white',
     border: 'white',
@@ -26,6 +26,8 @@ const activeUserStyle = {
                 <div className="col-sm-3 float-sm-right">
                     <img src="http://lorempixel.com/200/200" alt="Placeholder Pic"/>
                 </div>
+                <br />
+                <FormModal />
             </div>
         
     )
