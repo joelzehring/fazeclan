@@ -1,0 +1,27 @@
+// ADD YOUR OWN KEYS AND RENAME THIS FILE TO keys.js
+const GITHUB_TOKENS = {
+  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+  GITHUB_ACCESS_TOKEN: process.env.GITHUB_ACCESS_TOKEN,
+  GITHUB_TOKEN_SECRET: "SOME TOKEN SECRET"
+};
+
+/*
+const DB_USER = "SOME USER";
+const DB_PASSWORD = "SOME PASSWPORD";
+const MONGODB = {
+  MONGODB_URI: `mongodb://${DB_USER}:${DB_PASSWORD}@ds<SOME_DOMAIN>.mlab.com:<PORT>/<PROJECT_NAME>`
+};
+*/
+
+const SESSION = {
+  COOKIE_KEY: "thisappisawesome"
+};
+
+const KEYS = {
+  ...GITHUB_TOKENS,
+  //...MONGODB,
+  ...SESSION
+};
+
+module.exports = KEYS;
