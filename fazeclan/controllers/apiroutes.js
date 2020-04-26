@@ -1,27 +1,85 @@
-const axios = require("../client/node_modules/axios");
+// const axios = require("../client/node_modules/axios");
 
-function apiRoute(app) {
-    app.get("/api/github/:user", function (req, res) {
-        axios({
-            url: "https://api.github.com/graphql",
-            method: "POST",
-            data: {
-                viewer: {
-                    login: "sharkrachel",
-                    contributionsCollection: {
-                        totalCommitContributions: 442
-                    }
-                }
-            }
-        })
-            .then((result) => {
-                console.log(result.data);
-            });
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const { buildSchema } = require('graphql');
 
-    })
-}
+var schema = buildSchema(`
+type Query {
+    {
+        viewer {
+          login
+      
+        }
+        user(login: "sharkrachel") {
+          bio
+          followers {
+            totalCount
+          }
+          name
+          avatarUrl
+          repositories {
+            totalCount
+          }
+              contributionsCollection {
+            totalCommitContributions
+          }
+        }
+      }
+}`);
 
-module.exports = apiRoute;
+var root = { hello: () => 'Hello world!' };
+
+var app = express();
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  rootValue: root,
+  graphiql: true,
+}));
+app.listen(4000, () => console.log('Now browse to localhost:4000/graphql'));
+
+
+
+
+// function requestUserRepos(username) {
+//     const xhr = new XMLHttpRequest();
+//     const url = `https://api.github.com/users/${username}/repos`;
+
+//     xhr.open("GET", url, true);
+
+//     xhr.onload = function() {
+//         const data = JSON.parse(this.response);
+//         console.log(data);
+//     }
+
+//     xhr.send();
+// }
+
+// requestUserRepos("sharkrachel");
+
+
+// function apiRoute(app) {
+//     app.get("/api/github/:user", function (req, res) {
+//         axios({
+//             url: "https://api.github.com/graphql",
+//             method: "POST",
+//             data: {
+//                 viewer: {
+//                     login: "sharkrachel",
+//                     contributionsCollection: {
+//                         totalCommitContributions: 442
+//                     }
+//                 }
+//             }
+//         })
+//             .then((result) => {
+//                 console.log(result.data);
+//             });
+
+//     })
+// }
+
+// module.exports = apiRoute;
 
 
 // API CALL TO GET NUMBER OF COMMITS THROUGH REST API
