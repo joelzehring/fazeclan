@@ -22,9 +22,13 @@
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "axios": "^0.18.0",
-    "express": "^4.16.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
+    "node-fetch": "^2.6.0",
     "react-router-dom": "^5.1.2"
   }
 }
