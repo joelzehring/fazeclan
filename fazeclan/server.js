@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3002;
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 
-//hello
+//hello there
 
 var trustProxy = false;
 if (process.env.DYNO) {

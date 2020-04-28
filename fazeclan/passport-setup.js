@@ -1,4 +1,5 @@
 const passport = require("passport");
+const keys = require("./keys.js");
 const GithubStrategy = new (require("passport-github2").Strategy)(
   {
     clientID: keys.GITHUB_CLIENT_ID,
@@ -26,7 +27,6 @@ const GithubStrategy = new (require("passport-github2").Strategy)(
     done(null, currentUser);
   }
 );
-const keys = require("./keys.js");
 const User = require("./models/user-model");
 
 // serialize the user.id to save in the cookie session
