@@ -10,12 +10,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const useStyles = {
+const buttonStyle = {
     position: 'relative',
     width: '200px',
     margin: '0 auto',
     display: 'block',
-    marginTop: '8%'
+    marginTop: '4%'
   };
 
 export default function FormDialog() {
@@ -31,7 +31,7 @@ export default function FormDialog() {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen} style={useStyles}>
+      <Button variant="contained" color="primary" onClick={handleClickOpen} style={buttonStyle}>
         Edit Profile
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
