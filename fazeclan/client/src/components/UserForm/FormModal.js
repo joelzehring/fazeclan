@@ -15,7 +15,7 @@ const buttonStyle = {
     width: '200px',
     margin: '0 auto',
     display: 'block',
-    marginTop: '4%'
+    marginTop: '3%'
   };
 
 export default function FormDialog() {
