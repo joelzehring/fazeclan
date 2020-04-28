@@ -13,8 +13,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 const useStyles = {
     position: 'relative',
     width: '200px',
-    marginTop: '10px',
-    marginBottom: '10px'
+    margin: '0 auto',
+    display: 'block',
+    marginTop: '8%'
   };
 
 export default function FormDialog() {

@@ -20,8 +20,9 @@ const activeUserStyle = {
 const buttonStyles = {
     position: 'relative',
     width: '200px',
-    marginTop: '10px',
-    marginBottom: '10px'
+    margin: '0 auto',
+    display: 'block',
+    marginTop: '8%'
   };
 
 
