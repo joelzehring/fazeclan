@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Wrapper from './components/Layout/Wrapper'
-import ActiveUser from './components/Layout/ActiveUser'
+import Welcome from './components/Layout/Welcome'
 import TopUser from './components/Layout/TopUser'
 import UserFavorites from './components/Layout/UserFavorites'
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
         <Wrapper>
           <div className="container">
-            <ActiveUser />
+            <Welcome />
             <UserFavorites />
             <TopUser />
           </div>
