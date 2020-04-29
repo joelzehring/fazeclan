@@ -1,33 +1,7 @@
 const passport = require("passport");
 const keys = require("./keys.js");
-const GithubStrategy = new (require("passport-github2").Strategy)(
-  {
-    clientID: keys.GITHUB_CLIENT_ID,
-    clientSecret: keys.GITHUB_CLIENT_SECRET,
-    callbackURL: "/auth/github/redirect"
-  },
-  async (token, tokenSecret, profile, done) => {
-    // find current user in UserModel
-    console.log(profile);
-    const currentUser = await User.findOne({
-      githubId: profile._json.id_str
-    });
-    // create new user if the database doesn't have this user
-    if (!currentUser) {
-      const newUser = await new User({
-        name: profile._json.name,
-        githubId: profile._json.id_str,
-        profileImageUrl: profile._json.profile_image_url,
-        badges: []
-      }).save();
-      if (newUser) {
-        done(null, newUser);
-      }
-    }
-    done(null, currentUser);
-  }
-);
 const User = require("./models/user-model");
+const GithubStrategy = require("passport-github2");
 
 // serialize the user.id to save in the cookie session
 // so the browser will remember the user when login
@@ -48,26 +22,25 @@ passport.deserializeUser((id, done) => {
 
 passport.use('github', GithubStrategy);
 
-   /*
 passport.use(
   new GithubStrategy(
  
     {
-      clientID: "a07ebdfd14dc7f6062e6",
-      clientSecret: "ee1854f93bf397a6b40d1f8b0b1936e9acd73583",
+      clientID: keys.GITHUB_CLIENT_ID,
+      clientSecret: keys.GITHUB_CLIENT_SECRET,
       callbackURL: "/auth/github/redirect"
     },
     async (token, tokenSecret, profile, done) => {
       // find current user in UserModel
       const currentUser = await User.findOne({
-        githubId: profile._json.id_str
+        name: profile.username,
+        githubId: profile.id
       });
       // create new user if the database doesn't have this user
       if (!currentUser) {
         const newUser = await new User({
-          name: profile._json.name,
-          githubId: profile._json.id_str,
-          profileImageUrl: profile._json.profile_image_url
+          name: profile.username,
+          githubId: profile.id
         }).save();
         if (newUser) {
           done(null, newUser);
@@ -77,4 +50,12 @@ passport.use(
     }
   )
 );
-*/
+
+// Github user profile object {
+//   *   - `provider`         always set to `github`
+//   *   - `id`               the user's GitHub ID
+//   *   - `username`         the user's GitHub username
+//   *   - `displayName`      the user's full name
+//   *   - `profileUrl`       the URL of the profile for the user on GitHub
+//   *   - `emails`           the user's email addresses
+// }

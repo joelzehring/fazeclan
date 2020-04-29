@@ -2,11 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const passport = require('passport');
 const Strategy = require('passport-github2').Strategy;
-
 const fetch = require("node-fetch");
 const apiRoutes = require("./controllers/apiroutes");
-
-
 const mongoose = require("mongoose");
 const cors = require("cors");
 const session = require("express-session");
@@ -22,8 +19,6 @@ const PORT = process.env.PORT || 3001;
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 
-//hello there
-
 var trustProxy = false;
 if (process.env.DYNO) {
   // Apps on heroku are behind a trusted proxy
@@ -33,13 +28,6 @@ if (process.env.DYNO) {
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-passport.use(new Strategy({
-  clientID: keys.GITHUB_CLIENT_ID,
-  clientSecret: keys.GITHUB_CLIENT_SECRET,
-  callbackURL: '/auth/github/redirect',
-  proxy: trustProxy
-},function(){console.log("logging")}));
 
 app.use(
   cookieSession({
@@ -86,6 +74,7 @@ const authCheck = (req, res, next) => {
 // otherwise, send a 401 response that the user is not authenticated
 // authCheck before navigating to home page
 app.get("/", authCheck, (req, res) => {
+  console.log(req.user.name);
   res.status(200).json({
     authenticated: true,
     message: "user successfully authenticated",
