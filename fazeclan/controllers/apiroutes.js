@@ -1,6 +1,9 @@
 require("dotenv").config();
 const fetch = require("node-fetch");
 const router = require("express").Router();
+const userController = require("./userController");
+
+
 
 // Set up api route
 router.use('/api/gitinfo/:username', function (req, res) {
@@ -50,5 +53,11 @@ router.use('/api/gitinfo/:username', function (req, res) {
         res.send(data);
       });
   });
-  
+
+// Matches with "/api/user/:id"
+router
+  .route("/api/user/:id")
+  .get(userController.findById)
+  .put(userController.update)
+
   module.exports = router;
