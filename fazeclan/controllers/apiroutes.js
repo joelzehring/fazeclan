@@ -1,76 +1,54 @@
-// const axios = require("../client/node_modules/axios");
+require("dotenv").config();
+const fetch = require("node-fetch");
+const router = require("express").Router();
 
-
-
-
-
-
-
-// function requestUserRepos(username) {
-//     const xhr = new XMLHttpRequest();
-//     const url = `https://api.github.com/users/${username}/repos`;
-
-//     xhr.open("GET", url, true);
-
-//     xhr.onload = function() {
-//         const data = JSON.parse(this.response);
-//         console.log(data);
-//     }
-
-//     xhr.send();
-// }
-
-// requestUserRepos("sharkrachel");
-
-
-// function apiRoute(app) {
-//     app.get("/api/github/:user", function (req, res) {
-//         axios({
-//             url: "https://api.github.com/graphql",
-//             method: "POST",
-//             data: {
-//                 viewer: {
-//                     login: "sharkrachel",
-//                     contributionsCollection: {
-//                         totalCommitContributions: 442
-//                     }
-//                 }
-//             }
-//         })
-//             .then((result) => {
-//                 console.log(result.data);
-//             });
-
-//     })
-// }
-
-// module.exports = apiRoute;
-
-
-// API CALL TO GET NUMBER OF COMMITS THROUGH REST API
-
-// function apiRoutes(app) {
-//     var user = req.params.user;
-//     var userData = {};
-//     var numberOfCommits = 0;
-//     app.get("https://api.github.com/users/" + user)
-//         .then(function (response) {
-//             userData.userName = user;
-//             userData.public_repos = response.data.public_repos
-//             userData.followers = response.data.followers;
-//             axios.get(`https://api.github.com/users/${user}/repos`)
-//                 .then(function (response) {
-
-//                     console.log(response.data);
-//                     for (var i = 0; i < response.data.length; i++) {
-
-//                         axios.get(`https://api.github.com/repos/${user}/${response.data[i].name}/commits`)
-//                             .then(function (response) {
-//                                 numberOfCommits += response.data.length
-//                             })
-//                     }
-//                     userData.numberOfCommits = numberOfCommits;
-//                     res.json(userData);
-//                 });
-//         })
-// }
+// Set up api route
+router.use('/api/gitinfo/:username', function (req, res) {
+    // Access Token for github
+    const token = process.env['GITHUB_ACCESS_TOKEN'];
+    // GraphQL query 
+    const query = `
+  
+      {
+          viewer {
+            login
+        
+          }
+          user(login: "${req.params.username}") {
+            bio
+            followers {
+              totalCount
+            }
+            name
+            avatarUrl
+            repositories {
+              totalCount
+            }
+                contributionsCollection {
+              totalCommitContributions
+            }
+          }
+        }
+  `;
+  // Request to github API
+    const options = {
+      method: "post",
+      headers: {
+        "Authorization": token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        query: query
+      })
+    };
+  
+    // Fetch the data from github graphql
+    fetch(`https://api.github.com/graphql`, options)
+      .then(res => res.json())
+      .then(function (data) {
+        // Displays that beautiful data
+        res.send(data);
+      });
+  });
+  
+  module.exports = router;
