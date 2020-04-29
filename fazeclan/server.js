@@ -2,10 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const passport = require('passport');
 const Strategy = require('passport-github2').Strategy;
-
 const fetch = require("node-fetch");
-
-
 const mongoose = require("mongoose");
 const cors = require("cors");
 const session = require("express-session");
@@ -16,12 +13,10 @@ const authRoutes = require("./controllers/auth-routes");
 const passportSetup = require("./passport-setup");
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
-
-//hello there
 
 var trustProxy = false;
 if (process.env.DYNO) {
@@ -32,13 +27,6 @@ if (process.env.DYNO) {
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-passport.use(new Strategy({
-  clientID: keys.GITHUB_CLIENT_ID,
-  clientSecret: keys.GITHUB_CLIENT_SECRET,
-  callbackURL: '/auth/github/redirect',
-  proxy: trustProxy
-},function(){console.log("logging")}));
 
 app.use(
   cookieSession({
