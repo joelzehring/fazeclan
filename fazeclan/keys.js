@@ -6,13 +6,14 @@ const GITHUB_TOKENS = {
   GITHUB_TOKEN_SECRET: "SOME TOKEN SECRET"
 };
 
-/*
-const DB_USER = "SOME USER";
-const DB_PASSWORD = "SOME PASSWPORD";
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const MLAB_DOMAIN = process.env.MLAB_DOMAIN;
+const MLAB_PORT = process.env.MLAB_PORT;
+const HEROKU_PROJECT = process.env.HEROKU_PROJECT;
 const MONGODB = {
-  MONGODB_URI: `mongodb://${DB_USER}:${DB_PASSWORD}@ds<SOME_DOMAIN>.mlab.com:<PORT>/<PROJECT_NAME>`
+  MONGODB_URI: `mongodb://${DB_USER}:${DB_PASSWORD}@ds${MLAB_DOMAIN}.mlab.com:${MLAB_PORT}/${HEROKU_PROJECT}`
 };
-*/
 
 const SESSION = {
   COOKIE_KEY: "thisappisawesome"
@@ -20,7 +21,7 @@ const SESSION = {
 
 const KEYS = {
   ...GITHUB_TOKENS,
-  //...MONGODB,
+  ...MONGODB,
   ...SESSION
 };
 
