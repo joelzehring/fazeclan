@@ -7,11 +7,15 @@ export default {
     return axios.get("/api/gitinfo/:username");
   },
    // Gets the book with the given id
-   getUser: function(id) {
-    return axios.get("/api/user" + id);
+   getUser: function(username) {
+     console.log(username);
+    return axios.get("/api/user/" + username);
   },
   // Saves a book to the database
-  udateUser: function(userData) {
-    return axios.post("/api/user/", userData);
+  udateUser: function(username, userData) {
+    return axios.post("/api/user/" + username, userData);
+  },
+  getUsername: function() {
+    return axios.get("/login/success");
   }
 };

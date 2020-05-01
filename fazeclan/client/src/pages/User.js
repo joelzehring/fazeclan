@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
-import API from "../utils";
+import API from "../utils/API";
+import ActiveUser from "../../src/components/Layout/ActiveUser";
 
-class User extends component {
+class User extends Component {
     state = {
-        userID: [], //should be able to get this from state??
+        username: "", //should be able to get this from state??
         badges: [],
-        githubRes: []
+        githubRes: [],
+        userInfo: []
     }
 
-    // componentDidMount() {
-    //     API.searchUser("kimberlycase91")
-    //       .then(response => {
-    //         console.log(response.data);
-    //         this.setState({ githubRes: response.data });
-    //       })
-    //   };
+    componentDidMount() {
+        API.getUsername()
+            .then(response => {
+                console.log(response.user);
+            })
+            .catch(err => console.log(err));
+    };
 
-    searchGithub = id => {
-        API.searchUser(id)
+    searchGithub = () => {
+        API.searchUser(this.state.username)
             .then(response => {
                 console.log(response.data);
                 this.setState({ githubRes: response.data });
-            });
+            })
+            .catch(err => console.log(err));
+
 
         const commitCount = this.state.githubRes.userInfo[0].data.viewer.contributionsCollection.totalCommitContributions;
 
@@ -55,20 +59,33 @@ class User extends component {
         }
         console.log(this.state.badges);
 
-        API.updateUser(this.state.badges).then(response => {
+        API.updateUser(this.state.username, this.state.badges).then(response => {
             console.log(response.data);
-            this.setState({ githubRes: response.data });
-        });
+        })
+        .catch(err => console.log(err));        
     };
 
-    
+    findUser = () => {
+        API.getUser(this.state.username).then(response => {
+            console.log(response.data);
+            this.setState({ userInfo: response.data })
+                .catch(err => console.log(err));
+
+        })
+    }
+
 
     //mongo db.find function to grab all the user data (with updated badges) and display in component
 
     render() {
-    
-    }
+        return (
+                <ActiveUser 
+                name={this.state.userInfo.name}
+                />
+    )}
 }
+
+export default User;
 
 //example api response:
 // const userInfo = [{

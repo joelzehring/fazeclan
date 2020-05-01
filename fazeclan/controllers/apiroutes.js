@@ -56,8 +56,8 @@ router.use('/api/gitinfo/:username', function (req, res) {
 
 // Matches with "/api/user/:id"
 router
-  .route("/api/user/:id")
-  .get(userController.findById)
+  .route("/api/user/:username")
+  .get(userController.findUser)
   .put(userController.update)
 
   module.exports = router;

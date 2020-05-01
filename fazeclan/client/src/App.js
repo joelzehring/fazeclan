@@ -4,6 +4,7 @@ import Wrapper from './components/Layout/Wrapper'
 import Welcome from './components/Layout/Welcome'
 import TopUser from './components/Layout/TopUser'
 import UserFavorites from './components/Layout/UserFavorites'
+import User from './pages/User';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Wrapper>
           <div className="container">
             <Welcome />
+            <User />
             <UserFavorites />
             <TopUser />
           </div>
