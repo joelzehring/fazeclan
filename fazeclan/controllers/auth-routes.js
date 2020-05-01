@@ -29,11 +29,11 @@ router.get("/logout", (req, res) => {
 });
 
 // auth with github
-router.get("/github", passport.authenticate("github"));
+router.get("/github", passport.authenticate("github", { scope: [ 'user:email' ]}));
 
 // redirect to home page after successfully login via github
 router.get(
-  "/github/redirect",
+  "/github/redirect/",
   passport.authenticate("github", {
     successRedirect: CLIENT_HOME_PAGE_URL,
     failureRedirect: "/auth/login/failed"
