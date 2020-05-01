@@ -1,6 +1,5 @@
 import React from 'react'
-import FormModal from '../UserForm/FormModal'
-import { makeStyles } from '@material-ui/core/styles';
+import FormModal from '../UserForm/FormModal';
 import Button from '@material-ui/core/Button';
 
 // Overall Page Style
