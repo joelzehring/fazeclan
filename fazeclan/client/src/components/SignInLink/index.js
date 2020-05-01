@@ -28,22 +28,23 @@ class SignInLink extends Component {
       })
       .then(res => {
         this.setState({
-          authenticated: false,
+          authenticated: true,
           activeUser: res.user.name
         });
       })
       .catch(error => {
         this.setState({
-          authenticated: true,
+          authenticated: false,
           error: "Failed to authenticate user"
         });
       });
   }
 
   render() {
+    const auth = this.state.authenticated;
     return (
       <div>
-        <p style={this.state.pStyle}>{ (this.state.authenticated) ? this.state.activeUser : "Sign In" } </p>
+        <a style={this.state.pStyle} href={ (auth) ? "http://localhost:3001/auth/logout" : "http://localhost:3001/auth/github" }>{ (auth) ? this.state.activeUser + " (logout)": "Sign In" } </a>
       </div>
     )
   }
