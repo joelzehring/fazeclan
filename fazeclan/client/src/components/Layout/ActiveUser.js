@@ -1,5 +1,6 @@
 import React from 'react'
 import FormModal from '../UserForm/FormModal';
+import GitBattleButton from '../UserForm/GitBattleButton'
 import Button from '@material-ui/core/Button';
 
 // Overall Page Style
@@ -35,9 +36,8 @@ const buttonStyles = {
   };
 
 // Active User's Information
- function ActiveUser(props) {
-    return (
-            
+ function ActiveUser() {
+    return (  
             <div className="row active-user" style={activeUserStyle}>
                 <div className="col-sm-3" style={activeUserInfoStyle}>
                     <h2>{props.name}</h2>
@@ -51,9 +51,7 @@ const buttonStyles = {
                 <Button variant="contained" color="primary" style={buttonStyles}>
                 Git Stats
                 </Button>
-                <Button variant="contained" color="primary" style={buttonStyles}>
-                Git Battle
-                </Button>
+                <GitBattleButton />
                 <FormModal />
                 </div>
                 <div className="col-sm-3">
@@ -64,7 +62,6 @@ const buttonStyles = {
                 <br />
                 
             </div>
-        
     )
 }
 export default ActiveUser;

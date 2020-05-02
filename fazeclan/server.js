@@ -80,7 +80,7 @@ app.get("/", authCheck, (req, res) => {
     message: "user successfully authenticated",
     user: req.user,
     cookies: req.cookies
-  });
+  }).then(console.log(req.user));
 });
 
 // Serve up static assets (usually on heroku)
