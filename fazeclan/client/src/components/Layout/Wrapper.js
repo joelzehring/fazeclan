@@ -1,6 +1,8 @@
 import React from "react";
 import Search from './Search'
+import SignInLink from '../../components/SignInLink'
 const Logo = require('../../images/gitclub_logo.png');
+
 
 
 const containerStyle = {
@@ -26,7 +28,7 @@ function Wrapper(props) {
           <a className="title" href="/">
             <img className="logo" style={logoStyle} src={Logo} alt=""/>
           </a>
-          
+          <SignInLink />
           <div>
             <Search/> 
           </div>
