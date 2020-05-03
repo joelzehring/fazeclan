@@ -21,7 +21,6 @@ class App extends Component {
           </Switch>
         </Router>
       </AuthContextProvider>
-      
     );
   }
 }

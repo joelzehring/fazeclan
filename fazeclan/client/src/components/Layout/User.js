@@ -1,25 +1,28 @@
-import React, { Component } from 'react';
-import API from "../utils/API";
-import ActiveUser from "../../src/components/Layout/ActiveUser";
+import React, { Component, useContext } from 'react';
+import API from "../../utils/API";
+import ActiveUser from "./ActiveUser";
+import { AuthContext } from '../../contexts/AuthContext';
+
 
 class User extends Component {
+
+    static contextType = AuthContext;
+
     state = {
-        username: "", //should be able to get this from state??
-        badges: [],
+        userInfo: [],
         githubRes: [],
-        userInfo: []
+        badges: [],
+        activeUser: ""
     }
 
     componentDidMount() {
-        API.getUsername()
-            .then(response => {
-                console.log(response.user);
-            })
-            .catch(err => console.log(err));
-    };
+        let value = this.context;
+        console.log(value);
+    }
 
-    searchGithub = () => {
-        API.searchUser(this.state.username)
+    searchGithub = (activeUser) => {
+
+        API.searchUser(activeUser)
             .then(response => {
                 console.log(response.data);
                 this.setState({ githubRes: response.data });
@@ -59,14 +62,14 @@ class User extends Component {
         }
         console.log(this.state.badges);
 
-        API.updateUser(this.state.username, this.state.badges).then(response => {
+        API.updateUser(activeUser, this.state.badges).then(response => {
             console.log(response.data);
         })
-        .catch(err => console.log(err));        
+            .catch(err => console.log(err));
     };
 
-    findUser = () => {
-        API.getUser(this.state.username).then(response => {
+    findUser = (activeUser) => {
+        API.getUser(activeUser).then(response => {
             console.log(response.data);
             this.setState({ userInfo: response.data })
                 .catch(err => console.log(err));
@@ -80,33 +83,10 @@ class User extends Component {
     render() {
         return (
                 <ActiveUser 
-                name={this.state.userInfo.name}
+                name = {this.state.activeuser}
                 />
-    )}
+        )
+    }
 }
 
 export default User;
-
-//example api response:
-// const userInfo = [{
-//     data: {
-//       viewer: {
-//         login: "sharkrachel",
-//         contributionsCollection: {
-//           totalCommitContributions: 450
-//         }
-//       },
-//       user: {
-//         bio: "I am a Full Stack Developer with a background in marketing and business operations. I love anything JS, React and Node!",
-//         followers: {
-//           totalCount: 11
-//         },
-//         name: "Rachel Sipes",
-//         avatarUrl: "https://avatars2.githubusercontent.com/u/54150830?u=33968e0495c8ff8b2044d015c7a4ab34ec1ec24c&v=4",
-//         repositories: {
-//           totalCount: 32
-//         }
-//       }
-//     }
-//   }];
-

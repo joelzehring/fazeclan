@@ -36,7 +36,7 @@ const buttonStyles = {
   };
 
 // Active User's Information
- function ActiveUser() {
+ function ActiveUser(props) {
     return (  
             <div className="row active-user" style={activeUserStyle}>
                 <div className="col-sm-3" style={activeUserInfoStyle}>
