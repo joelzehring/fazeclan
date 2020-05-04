@@ -1,0 +1,39 @@
+// Core
+
+body {
+  .app-search-wrapper {
+    background-color: rgba(255,255,255, 0.12);
+    border-radius: $border-radius-sm;
+    height: 36px;
+    padding: 0 $spacer;
+    display: flex;
+    align-items: center;
+  }
+
+  .app-search-icon {
+    color: inherit;
+  }
+
+  .app-search-input {
+    margin-left: $spacer;
+    padding: $spacer $spacer $spacer 0;
+    transition: $transition-base;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 80px;
+
+      &:focus {
+        width: 200px;
+      }
+    }
+  }
+
+  .app-search-popper {
+    z-index: 1333;
+  }
+
+  .app-search-popper-content {
+    margin-top: $spacer;
+  }
+}
