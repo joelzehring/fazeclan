@@ -1,4 +1,6 @@
 import React, { createContext, Component } from 'react';
+import API from "../utils/api";
+
 
 export const AuthContext = createContext();
 
@@ -6,7 +8,9 @@ class AuthContextProvider extends Component {
   state = {
     authenticated: false,
     activeUser: "",
-    error: null
+    error: null,
+    userProfile: {}
+
   }
 
   componentDidMount() {
@@ -28,6 +32,14 @@ class AuthContextProvider extends Component {
         this.setState({
           authenticated: true,
           activeUser: res.user.name
+        }, () => {
+          API.getGraphQL(this.state.activeUser)
+            .then(results => {
+              console.log("results: ", results.data.data.user);
+              this.setState({
+                userProfile: results.data.data.user
+              })
+            })
         });
       })
       .catch(error => {
@@ -40,8 +52,8 @@ class AuthContextProvider extends Component {
 
   render() {
     return (
-      <AuthContext.Provider value={{...this.state}}>
-        { this.props.children }
+      <AuthContext.Provider value={{ ...this.state }}>
+        {this.props.children}
       </AuthContext.Provider>
     )
   }

@@ -8,6 +8,7 @@ import API from "../utils/api"
 import AuthContextProvider, { AuthContext } from '../contexts/AuthContext';
 
 class Home extends Component {
+
   // load data from graphQL database
   static contextType = AuthContext;
   state = {
@@ -15,18 +16,23 @@ class Home extends Component {
 
   }
 
+  //  gitInfo = () => {
+  //   let value = this.context;
+  //     console.log("this.context: ", value);
+  //     API.getGraphQL(value.activeUser)
+  //       .then(results => {
+  //         console.log("results: ", results.data.data.user);
+  //         this.setState({
+  //           userProfile: results.data.data.user
+  //         })
+  //       })
+  //   }
+
   componentDidMount() {
-    let value = this.context;
-    if (value.authenticated) {
-      console.log("this.context: ", value);
-      API.getGraphQL(value.activeUser)
-        .then(results => {
-          console.log("results: ", results.data.data.user);
-          this.setState({
-            userProfile: results.data.data.user
-          })
-        })
-    }
+
+    // let value = this.context;
+    // this.gitInfo()
+
   }
 
 
@@ -37,7 +43,9 @@ class Home extends Component {
     return (
       <Wrapper>
         <div className="container">
-          <ActiveUserDisplay userProfile={this.state.userProfile} />
+          <AuthContext.Consumer>
+            <ActiveUserDisplay userProfile={value.userProfile} />
+          </AuthContext.Consumer>
           <UserFavorites />
           <TopUser />
 
