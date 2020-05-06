@@ -29,11 +29,19 @@ const buttonParentStyle = {
 // Temporary button Styles
 const buttonStyles = {
     position: 'relative',
-    width: '200px',
+    width: '100%',
     margin: '0 auto',
     display: 'block',
     marginTop: '3%'
 };
+
+// Image Styles
+const imageStyles = {
+    position: 'relative',
+    width: '100%',
+    margin: '0 auto'
+};
+
 
 // Active User's Information
 function ActiveUser() {
@@ -56,8 +64,8 @@ function ActiveUser() {
                 <FormModal />
             </div>
             <div className="col-sm-3">
-                <div className="profile-pic-holder">
-                    <img  alt="Profile pic" />
+                <div className="profile-pic-holder" style={imageStyles}>
+                    <img  className='card-img' src="http://lorempixel.com/200/200" alt="Placeholder Pic"/>
                 </div>
             </div>
             <br />
