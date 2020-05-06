@@ -33,7 +33,7 @@ function Wrapper(props) {
   return (
     <>
       <div className="container-fluid" style={containerStyle}>
-        <div className="body" style={bodyStyle}>
+        <div className="body" >
           <div className="navbar gc_nav" style={navStyle}>
             
             
