@@ -9,7 +9,8 @@ const buttonStyle = {
     width: '200px',
     margin: '0 auto',
     display: 'block',
-    marginTop: '3%'
+    marginTop: '3%',
+    textAlign: 'center'
   };
 
 export default class GitBattleButton extends Component {
