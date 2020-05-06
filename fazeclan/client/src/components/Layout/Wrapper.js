@@ -1,12 +1,14 @@
 import React from "react";
 import Search from './Search'
 import SignInLink from '../../components/SignInLink'
+import BgImage from '../../images/dark_wood.jpg'
 const Logo = require('../../images/gitclub_logo.png');
 
 
 
 const containerStyle = {
-    padding: '0px'
+    padding: '0px',
+    backgroundImage: `url(${BgImage})`
 }
 
 const logoStyle = {
