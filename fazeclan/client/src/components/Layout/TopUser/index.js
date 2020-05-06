@@ -1,5 +1,5 @@
 import React from 'react'
-const imagePlaceHolder = require('../../images/200x200.png');
+const imagePlaceHolder = require('../../../images/200x200.png');
 
 const cardParent = {
     paddingLeft: '50px',
@@ -16,14 +16,14 @@ const cardedStyle = {
     borderWidth: '2px'
 }
 
-const favImageStyle = {
+const topUserImageStyle = {
     width: '200px',
-    borderRadius: '20px',
+    borderRadius: '10px',
     margin: '0 auto',
     marginTop: '20px'
 }
 
-const favNameStyle = {
+const topUserNameStyle = {
     margin: '0 auto',
     textAlign: 'center',
     display: 'flex',
@@ -31,8 +31,7 @@ const favNameStyle = {
     alignItems: 'center'
 }
 
-
-function UserFavorites() {
+ function TopUser() {
     return (
         <div className="row">
 
@@ -42,14 +41,14 @@ function UserFavorites() {
                     
                     <div className="card-body text-center">
                         <div className="col-sm-12">
-                            <h3>User Favorite</h3>
+                            <h3>User of the Day</h3>
                         </div> 
                         <div className="row">
-                            <p className="col-sm-6  " style={favNameStyle}>
+                            <p className="col-sm-6  " style={topUserNameStyle}>
                                 {/* Insert data here from API. Current text is just placeholder */}
                                 'User's Github Name'
                             </p>
-                            <div className="col-sm-6" style={favImageStyle}>
+                            <div className="col-sm-6" style={topUserImageStyle}>
                             <img className="card-img" src={imagePlaceHolder} alt="user-week"  />
                             </div>
                         </div>
@@ -63,14 +62,14 @@ function UserFavorites() {
                     
                     <div className="card-body text-center">
                         <div className="col-sm-12">
-                            <h3>User Favorite</h3>
+                            <h3>User of the Week</h3>
                         </div> 
                         <div className="row">
-                            <p className="col-sm-6  " style={favNameStyle}>
+                            <p className="col-sm-6  " style={topUserNameStyle}>
                                 {/* Insert data here from API. Current text is just placeholder */}
                                 'User's Github Name'
                             </p>
-                            <div className="col-sm-6" style={favImageStyle}>
+                            <div className="col-sm-6" style={topUserImageStyle}>
                             <img className="card-img" src={imagePlaceHolder} alt="user-week"  />
                             </div>
                         </div>
@@ -84,14 +83,14 @@ function UserFavorites() {
                     
                     <div className="card-body text-center">
                         <div className="col-sm-12">
-                            <h3>User Favorite</h3>
+                            <h3>User of the Month</h3>
                         </div> 
                         <div className="row">
-                            <p className="col-sm-6  " style={favNameStyle}>
+                            <p className="col-sm-6  " style={topUserNameStyle}>
                                 {/* Insert data here from API. Current text is just placeholder */}
                                 'User's Github Name'
                             </p>
-                            <div className="col-sm-6" style={favImageStyle}>
+                            <div className="col-sm-6" style={topUserImageStyle}>
                             <img className="card-img" src={imagePlaceHolder} alt="user-week"  />
                             </div>
                         </div>
@@ -99,6 +98,8 @@ function UserFavorites() {
                 </div>
             </div>
         </div>
+      
     )
 }
-export default UserFavorites;
+
+export default TopUser;

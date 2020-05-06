@@ -9,6 +9,7 @@ class Battle extends Component {
           <div className="container">
             <div>Hello</div>
           </div>
+          { console.log('gitbattle') }
         </Wrapper>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
-import Search from './Search'
-import SignInLink from '../../components/SignInLink'
-const Logo = require('../../images/gitclub_logo.png');
+import Search from '../Search'
+import SignInLink from '../../SignInLink'
+const Logo = require('../../../images/gitclub_logo.png');
 
 
 
