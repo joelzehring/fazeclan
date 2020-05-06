@@ -20,9 +20,9 @@ const SESSION = {
 };
 
 const KEYS = {
-  GITHUB_CLIENT_ID=a07ebdfd14dc7f6062e6,
-  GITHUB_CLIENT_SECRET=ee1854f93bf397a6b40d1f8b0b1936e9acd73583,
-  GITHUB_ACCESS_TOKEN=2b931562f54dea9a62a90b96de4cd2cc710d55f5
+  ...GITHUB_TOKENS,
+  ...MONGODB,
+  ...SESSION
 };
 
 module.exports = KEYS;
