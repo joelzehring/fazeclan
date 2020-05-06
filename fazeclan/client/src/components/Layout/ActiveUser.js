@@ -1,6 +1,6 @@
 import React from 'react'
-import FormModal from '../../UserForm/FormModal';
-import GitBattleButton from '../../UserForm/GitBattleButton'
+import FormModal from '../../components/UserForm/FormModal';
+import GitBattleButton from '../../components/UserForm/GitBattleButton'
 import Button from '@material-ui/core/Button';
 
 // Overall Page Style
@@ -36,12 +36,12 @@ const buttonStyles = {
 };
 
 // Active User's Information
-function ActiveUser(props) {
+function ActiveUser() {
     return (
         <div className="row active-user" style={activeUserStyle}>
             <div className="col-sm-3" style={activeUserInfoStyle}>
-                {console.log(props.userProfile.name)}
-                <h2>{props.userProfile.name}</h2>
+               
+                <h2></h2>
                 <h3>Rank: 1000</h3>
                 <h4>***</h4>
             </div>
@@ -57,7 +57,7 @@ function ActiveUser(props) {
             </div>
             <div className="col-sm-3">
                 <div className="profile-pic-holder">
-                    <img src={props.userProfile.avatarUrl} alt="Profile pic" />
+                    <img  alt="Profile pic" />
                 </div>
             </div>
             <br />
