@@ -8,7 +8,6 @@ router.use('/api/gitinfo/:username', function (req, res) {
     const token = process.env['GITHUB_ACCESS_TOKEN'];
     // GraphQL query 
     const query = `
-  
       {
           viewer {
             login
