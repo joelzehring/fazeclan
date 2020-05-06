@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
-import Wrapper from './components/Layout/Wrapper'
-import Welcome from './components/Layout/Welcome'
-import TopUser from './components/Layout/TopUser'
-import UserFavorites from './components/Layout/UserFavorites'
+import Home from './pages/Home';
+import Battle from './pages/battle';
+import AuthContextProvider from './contexts/AuthContext';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
+    
     return (
-        <Wrapper>
-          <div className="container">
-            <Welcome />
-            <UserFavorites />
-            <TopUser />
-          </div>
-        </Wrapper>
+      <AuthContextProvider>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Home}>
+              <Home />
+            </Route>
+            <Route path="/battle">
+              <Battle />
+            </Route>
+          </Switch>
+        </Router>
+      </AuthContextProvider>
+      
     );
   }
 }
