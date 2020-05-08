@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Wrapper from '../components/Layout/Wrapper'
-import ActiveUserDisplay from '../components/Layout/ActiveUserDisplay'
-import TopUser from '../components/Layout/TopUser'
-import UserFavorites from '../components/Layout/UserFavorites'
+import Wrapper from '../components/Wrapper'
+import ActiveUserDisplay from '../components/ActiveUserDisplay'
+import TopUser from '../components/TopUser'
+import UserFavorites from '../components/UserFavorites'
 
 class Home extends Component {
   render() {
