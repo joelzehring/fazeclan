@@ -10,7 +10,7 @@ class AuthContextProvider extends Component {
     activeUser: "",
     error: null,
     userProfile: {},
-    badges: []
+    badges: {}
   }
 
   componentDidMount() {
@@ -55,10 +55,10 @@ class AuthContextProvider extends Component {
   updateBadges () {
   const commitCount = this.state.userProfile.contributionsCollection.totalCommitContributions;
   if (commitCount >= 100) {
-    this.state.badges.oneHundredcommits = true;
+    this.state.badges.oneHundredCommits = true;
   }
   if (commitCount >= 200) {
-    this.state.badges.twoHundredcommits = true;
+    this.state.badges.twoHundredCommits = true;
   }
   console.log(this.state.badges);
 }

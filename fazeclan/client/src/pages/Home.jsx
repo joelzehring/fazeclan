@@ -4,6 +4,7 @@ import Wrapper from '../components/Wrapper'
 import ActiveUserDisplay from '../components/ActiveUserDisplay'
 import TopUser from '../components/TopUser'
 import UserFavorites from '../components/UserFavorites'
+import Badges from '../components/Badges';
 
 class Home extends Component {
   render() {
@@ -11,6 +12,7 @@ class Home extends Component {
       <Wrapper>
         <div className="container">
           <ActiveUserDisplay />
+          <Badges />
           <UserFavorites />
           <TopUser />
         </div>
