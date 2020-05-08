@@ -9,8 +9,8 @@ class AuthContextProvider extends Component {
     authenticated: false,
     activeUser: "",
     error: null,
-    userProfile: {}
-
+    userProfile: {},
+    badges: []
   }
 
   componentDidMount() {
@@ -39,7 +39,8 @@ class AuthContextProvider extends Component {
               // console.log("results: ", results.data.data.user);
               this.setState({
                 userProfile: results.data.data.user
-              })
+              });
+              this.updateBadges();
             })
         });
       })
@@ -49,15 +50,26 @@ class AuthContextProvider extends Component {
           error: "Failed to authenticate user"
         });
       });
-  }
+  };
 
-  render() {
-    return (
-      <AuthContext.Provider value={{ ...this.state }}>
-        {this.props.children}
-      </AuthContext.Provider>
-    )
+  updateBadges () {
+  const commitCount = this.state.userProfile.contributionsCollection.totalCommitContributions;
+  if (commitCount >= 100) {
+    this.state.badges.oneHundredcommits = true;
   }
+  if (commitCount >= 200) {
+    this.state.badges.twoHundredcommits = true;
+  }
+  console.log(this.state.badges);
+}
+
+render() {
+  return (
+    <AuthContext.Provider value={{ ...this.state }}>
+      {this.props.children}
+    </AuthContext.Provider>
+  )
+}
 }
 
 export default AuthContextProvider;
