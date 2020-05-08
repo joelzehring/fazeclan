@@ -32,8 +32,8 @@ const navStyle = {
 function Wrapper(props) {
   return (
     <>
-      <div className="container-fluid" style={containerStyle}>
-        <div className="body" >
+      <div className="container-fluid" style={containerStyle} id='container-fluid'>
+        <div className="body">
           <div className="navbar gc_nav" style={navStyle}>
             
             
