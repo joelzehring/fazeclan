@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Wrapper from '../components/Layout/Wrapper'
+import Wrapper from '../components/Wrapper/index'
 
 class Battle extends Component {
   render() {
