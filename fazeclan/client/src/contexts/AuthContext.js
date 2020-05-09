@@ -62,12 +62,13 @@ class AuthContextProvider extends Component {
   if (commitCount >= 100) {
     this.setState({ oneHundredCommits: true })
   }
-  if (commitCount >= 200) {
-    this.setState({ twoHundredCommits: true })
+  if (commitCount >= 250) {
+    this.setState({ twofiftyHundredCommits: true })
   }
-  // if (commitCount >= 300) {
-  //   this.setState({ badges: { threeHundredCommits: true } })
-  // }
+  if (commitCount >= 500) {
+    this.setState({ badges: { fiveHundredCommits: true } })
+  }
+  
 }
 
 render() {
