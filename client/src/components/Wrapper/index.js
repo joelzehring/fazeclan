@@ -1,7 +1,5 @@
 import React from "react";
 import Navbar from '../Navbar';
-import Search from '../Search'
-import SignInLink from '../SignInLink'
 import BgImage from '../../images/dark_wood.jpg'
 const Logo = require('../../images/gitclub_logo.png');
 
@@ -31,6 +29,7 @@ const navStyle = {
     backgroundColor: '303030'
 }
 
+// Page
 function Wrapper(props) {
   return (
     <>

@@ -12,6 +12,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Search from '../Search';
 import SignInLink from '../SignInLink';
 import HomeButton from '../HomeButton';
+import GitButton from '../GitButton';
 import GitBattleButton from '../UserForm/GitBattleButton';
 const Logo = require('../../images/gitclub_logo.png');
 
@@ -77,6 +78,8 @@ function ResponsiveDrawer(props) {
       <HomeButton />
       <Divider />
       <GitBattleButton />
+      <Divider />
+      <GitButton />
       <Divider />
       <Search/>
     </div>
