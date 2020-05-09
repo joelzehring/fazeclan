@@ -11,7 +11,7 @@ class Badges extends Component {
         console.log("updated: ", this.context);
     }
 
-
+//TODO: add images to a package.json and add paths to each badge image
     render() {
         return (
             <div>
@@ -22,18 +22,67 @@ class Badges extends Component {
                                     <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/award-1723733-1464635.png" alt="100commits" />
                                 </div>
                             ) : <div></div>}
-                            {(this.context.twoHundredCommits)
+                            {(this.context.twoFiftyCommits)
                             ? (
                                 <div className="badge" key={2}>
-                                    <h4>200 Commits</h4>
-                                    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/award-1723733-1464635.png" alt="100commits" />
+                                    <h4>250 Commits</h4>
+                                    <img src="..." alt="100commits" />
                                 </div>
                             ) : <div></div>}
-                             {(this.context.threeHundredCommits)
+                             {(this.context.fiveHundredCommits)
                             ? (
                                 <div className="badge" key={3}>
-                                    <h4>300 Commits</h4>
-                                    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/award-1723733-1464635.png" alt="100commits" />
+                                    <h4>500 Commits</h4>
+                                    <img src="..." alt="100commits" />
+                                </div>
+                            ) : <div></div>}
+                            {(this.context.oneThousandCommits)
+                            ? (
+                                <div className="badge" key={3}>
+                                    <h4>1000 Commits</h4>
+                                    <img src="..." alt="100commits" />
+                                </div>
+                            ) : <div></div>}
+                            {(this.context.tenFollowers)
+                            ? (
+                                <div className="badge" key={3}>
+                                    <h4>10 Followers</h4>
+                                    <img src="..." alt="100commits" />
+                                </div>
+                            ) : <div></div>}
+                            {(this.context.twentyFiveFollowers)
+                            ? (
+                                <div className="badge" key={3}>
+                                    <h4>25 Followers</h4>
+                                    <img src="..." alt="100commits" />
+                                </div>
+                            ) : <div></div>}
+                            {(this.context.fiftyFollowers)
+                            ? (
+                                <div className="badge" key={3}>
+                                    <h4>50 Followers</h4>
+                                    <img src="..." alt="100commits" />
+                                </div>
+                            ) : <div></div>}
+                             {(this.context.tenRepos)
+                            ? (
+                                <div className="badge" key={3}>
+                                    <h4>10 Repos</h4>
+                                    <img src="..." alt="100commits" />
+                                </div>
+                            ) : <div></div>}
+                            {(this.context.twentyFiveRepos)
+                            ? (
+                                <div className="badge" key={3}>
+                                    <h4>25 Repos</h4>
+                                    <img src="..." alt="100commits" />
+                                </div>
+                            ) : <div></div>}
+                            {(this.context.fiftyRepos)
+                            ? (
+                                <div className="badge" key={3}>
+                                    <h4>50 Repos</h4>
+                                    <img src="..." alt="100commits" />
                                 </div>
                             ) : <div></div>}
             </div>
