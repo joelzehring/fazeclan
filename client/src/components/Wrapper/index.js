@@ -34,20 +34,9 @@ const navStyle = {
 function Wrapper(props) {
   return (
     <>
-      <div className="container-fluid" style={containerStyle} id='container-fluid'>
-        <div className="body">
-          <div className="navbar gc_nav" style={navStyle}>
-            
-            
-            <a className="title" href="/">
-              <img className="logo" style={logoStyle} src={Logo} alt=""/>
-            </a>
-            <SignInLink />
-            <div>
-              <Search/> 
-            </div>
-          </div>
-          
+      <div className="container-fluid" style={containerStyle}>
+        <div className="body" >
+                  <Navbar />
           <div className={`wrapper ${props.class}`}>{props.children}
           </div>
         </div>
