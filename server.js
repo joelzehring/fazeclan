@@ -19,11 +19,11 @@ const PORT = process.env.PORT || 3001;
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 
-var trustProxy = false;
-if (process.env.DYNO) {
-  // Apps on heroku are behind a trusted proxy
-  trustProxy = true;
-}
+// var trustProxy = false;
+// if (process.env.DYNO) {
+//   // Apps on heroku are behind a trusted proxy
+//   trustProxy = true;
+// }
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
