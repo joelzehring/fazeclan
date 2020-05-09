@@ -9,8 +9,12 @@ class AuthContextProvider extends Component {
     authenticated: false,
     activeUser: "",
     error: null,
-    userProfile: {}
-
+    userProfile: {},
+    // badges: {
+    //   oneHundredCommits: false,
+    //   twoHundredCommits: false,
+    //   threeHundredCommits: false
+    // }
   }
 
   componentDidMount() {
@@ -39,7 +43,8 @@ class AuthContextProvider extends Component {
               // console.log("results: ", results.data.data.user);
               this.setState({
                 userProfile: results.data.data.user
-              })
+              });
+              this.updateBadges();
             })
         });
       })
@@ -49,15 +54,53 @@ class AuthContextProvider extends Component {
           error: "Failed to authenticate user"
         });
       });
-  }
+  };
 
-  render() {
-    return (
-      <AuthContext.Provider value={{ ...this.state }}>
-        {this.props.children}
-      </AuthContext.Provider>
-    )
+  updateBadges () {
+  const commitCount = this.state.userProfile.contributionsCollection.totalCommitContributions;
+  const followerCount = this.state.userProfile.followers.totalCount;
+  const repoCount = this.state.userProfile.repositories.totalCount;
+  if (commitCount >= 100) {
+    this.setState({ oneHundredCommits: true });
   }
+  if (commitCount >= 250) {
+    this.setState({ twoFiftyCommits: true });
+  }
+  if (commitCount >= 500) {
+    this.setState({ fiveHundredCommits: true });
+  }
+  if (commitCount >= 1000) {
+    this.setState({ oneThousandCommits: true });
+  }
+  if (followerCount >= 10) {
+    this.setState({ tenFollowers: true });
+  }
+  if (followerCount >= 25) {
+    this.setState({ twentyFiveFollowers: true });
+  }
+  if (followerCount >= 50) {
+    this.setState({ fiftyFollowers: true });
+  }
+  if (repoCount >= 10) {
+    this.setState({ tenRepos: true });
+  }
+  if (repoCount >= 25) {
+    this.setState({ twentyFiveRepos: true });
+  }
+  if (repoCount >= 50) {
+    this.setState({ fiftyRepos: true });
+  }
+  
+
+}
+
+render() {
+  return (
+    <AuthContext.Provider value={{ ...this.state }}>
+      {this.props.children}
+    </AuthContext.Provider>
+  )
+}
 }
 
 export default AuthContextProvider;
