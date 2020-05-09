@@ -1,25 +1,20 @@
-import React from './node_modules/react';
-import PropTypes from './node_modules/prop-types';
-import Divider from './node_modules/@material-ui/core/Divider';
+import React from "react";
+import PropTypes from 'prop-types';
+import Divider from '@material-ui/core/Divider';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Toolbar from '@material-ui/core/Toolbar';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Search from '../Search';
-import AppBar from './node_modules/@material-ui/core/AppBar';
-import CssBaseline from './node_modules/@material-ui/core/CssBaseline';
-import Drawer from './node_modules/@material-ui/core/Drawer';
-import Hidden from './node_modules/@material-ui/core/Hidden';
-import IconButton from './node_modules/@material-ui/core/IconButton';
-import InboxIcon from './node_modules/@material-ui/icons/MoveToInbox';
-import List from './node_modules/@material-ui/core/List';
-import ListItem from './node_modules/@material-ui/core/ListItem';
-import ListItemIcon from './node_modules/@material-ui/core/ListItemIcon';
-import ListItemText from './node_modules/@material-ui/core/ListItemText';
-import MailIcon from './node_modules/@material-ui/icons/Mail';
-import MenuIcon from './node_modules/@material-ui/icons/Menu';
-import Toolbar from './node_modules/@material-ui/core/Toolbar';
-import Typography from './node_modules/@material-ui/core/Typography';
-import { makeStyles, useTheme } from './node_modules/@material-ui/core/styles';
 import SignInLink from '../SignInLink';
+import HomeButton from '../HomeButton';
 import GitBattleButton from '../UserForm/GitBattleButton';
 const Logo = require('../../images/gitclub_logo.png');
+
 
 
 
@@ -78,6 +73,8 @@ function ResponsiveDrawer(props) {
       <div className={classes.toolbar} />
       <Divider />
       <SignInLink />
+      <Divider />
+      <HomeButton />
       <Divider />
       <GitBattleButton />
       <Divider />
