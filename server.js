@@ -19,11 +19,11 @@ const PORT = process.env.PORT || 3001;
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 
-// var trustProxy = false;
-// if (process.env.DYNO) {
-//   // Apps on heroku are behind a trusted proxy
-//   trustProxy = true;
-// }
+var trustProxy = false;
+if (process.env.DYNO) {
+  // Apps on heroku are behind a trusted proxy
+  trustProxy = true;
+}
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -81,6 +81,10 @@ app.get("/", authCheck, (req, res) => {
     user: req.user,
     cookies: req.cookies
   })//.then(console.log(req.user));
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
 });
 
 // Serve up static assets (usually on heroku)
