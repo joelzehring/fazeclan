@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../Header/index'
 import SignInLink from '../SignInLink'
 import TopUser from '../TopUser'
 const activeUserStyle = {

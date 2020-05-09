@@ -35,7 +35,7 @@ function Wrapper(props) {
     <>
       <div className="container-fluid" style={containerStyle}>
         <div className="body" >
-                  <Navbar />
+          <Navbar />
           <div className={`wrapper ${props.class}`}>{props.children}
           </div>
         </div>

@@ -9,12 +9,14 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import ActiveUser from '../ActiveUser';
 import Search from '../Search';
 import SignInLink from '../SignInLink';
 import HomeButton from '../HomeButton';
 import GitButton from '../GitButton';
 import GitBattleButton from '../UserForm/GitBattleButton';
 const Logo = require('../../images/gitclub_logo.png');
+
 
 
 
@@ -74,6 +76,8 @@ function ResponsiveDrawer(props) {
       <div className={classes.toolbar} />
       <Divider />
       <SignInLink />
+      <Divider />
+      <ActiveUser />
       <Divider />
       <HomeButton />
       <Divider />
