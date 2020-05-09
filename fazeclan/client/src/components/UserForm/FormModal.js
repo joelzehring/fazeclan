@@ -9,7 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 const buttonStyle = {
     position: 'relative',
-    width: '200px',
+    width: '100%',
     margin: '0 auto',
     display: 'block',
     marginTop: '3%'

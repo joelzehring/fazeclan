@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 
 const buttonStyle = {
     position: 'relative',
-    width: '200px',
+    width: '100%',
     margin: '0 auto',
     display: 'block',
-    marginTop: '3%'
+    marginTop: '3%',
+    textAlign: 'center'
   };
 
 export default class GitBattleButton extends Component {
