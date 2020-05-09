@@ -12,6 +12,7 @@ const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser"); // parse cookie header
 const authRoutes = require("./controllers/auth-routes");
 const passportSetup = require("./passport-setup");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
