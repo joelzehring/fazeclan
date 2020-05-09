@@ -86,9 +86,9 @@ app.get("/", authCheck, (req, res) => {
   })//.then(console.log(req.user));
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+// });
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
