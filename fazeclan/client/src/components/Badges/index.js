@@ -3,31 +3,36 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 class Badges extends Component {
     componentDidMount() {
-        const { badges } = this.context;
-        console.log("initial badges: ", badges);
+        console.log("initial: ", this.context);
 
     }
 
     componentDidUpdate() {
-        const { badges } = this.context;
-        console.log("updated badges: ", badges);
+        console.log("updated: ", this.context);
     }
+
 
     render() {
         return (
             <div>
                 <AuthContext.Consumer>{(context) => {
-                    const { badges } = context;
-                    console.log("render: ", badges);
-                    console.log(badges.oneHundredCommits);
+                    console.log("render: ", context);
+                    console.log(context.oneHundredCommits);
                     return (
-                        (badges.oneHundredCommits)
+                        (context.oneHundredCommits)
                             ? (
                                 <div className="badge" key={1}>
                                     <h4>100 Commits</h4>
                                     <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/award-1723733-1464635.png" alt="100commits" />
                                 </div>
-                            ) : <div>?</div>
+                            ) : <div></div>,
+                            (context.twoHundredCommits)
+                            ? (
+                                <div className="badge" key={2}>
+                                    <h4>200 Commits</h4>
+                                    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/award-1723733-1464635.png" alt="100commits" />
+                                </div>
+                            ) : <div></div>
                     )
                 }
                 }
