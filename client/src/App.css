@@ -1,0 +1,10 @@
+#container-fluid {
+    height: 100vh;
+}
+
+/* Stretches background */
+@media only screen and (max-width: 990px) {
+    #container-fluid {
+      height: 100%;
+    }
+  }
