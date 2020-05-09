@@ -55,8 +55,6 @@ app.use(
   })
 );
 
-// app.use('/', express.static(path.join(__dirname, '/client/build')));
-
 // set up routes
 app.use("/auth", authRoutes);
 
@@ -76,15 +74,17 @@ const authCheck = (req, res, next) => {
 // if it's already login, send the profile response,
 // otherwise, send a 401 response that the user is not authenticated
 // authCheck before navigating to home page
-app.use("/", authCheck, (req, res) => {
+app.get("/", authCheck, (req, res) => {
   console.log(req.user.name);
   res.status(200).json({
     authenticated: true,
     message: "user successfully authenticated",
     user: req.user,
     cookies: req.cookies
-  })//.then(console.log(req.user));
-});
+  })
+}).then(
+  app.use('/', express.static(path.join(__dirname, '/client/build')))
+);
 
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
