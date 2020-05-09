@@ -1,6 +1,6 @@
 import React from 'react'
 import FormModal from '../UserForm/FormModal';
-import GitBattleButton from '../UserForm/GitBattleButton'
+import GitBattleButton from '../UserForm/GitBattleButton';
 import Button from '@material-ui/core/Button';
 import { AuthContext } from "../../contexts/AuthContext";
 

@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from '../Navbar';
 import Search from '../Search'
 import SignInLink from '../SignInLink'
 import BgImage from '../../images/dark_wood.jpg'
 const Logo = require('../../images/gitclub_logo.png');
+
 
 
 // Container Styles
@@ -34,18 +36,7 @@ function Wrapper(props) {
     <>
       <div className="container-fluid" style={containerStyle}>
         <div className="body" >
-          <div className="navbar gc_nav" style={navStyle}>
-            
-            
-            <a className="title" href="/">
-              <img className="logo" style={logoStyle} src={Logo} alt=""/>
-            </a>
-            <SignInLink />
-            <div>
-              <Search/> 
-            </div>
-          </div>
-          
+                  <Navbar />
           <div className={`wrapper ${props.class}`}>{props.children}
           </div>
         </div>
