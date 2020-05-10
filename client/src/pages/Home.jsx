@@ -6,6 +6,9 @@ import UserFavorites from '../components/UserFavorites'
 import { AuthContext } from '../contexts/AuthContext';
 import PublicView from '../components/PublicView/'
 import PrivateView from '../components/PrivateView'
+import UserGraph from "../components/UserGraph"
+import ActiveUserDisplay from "../components/ActiveUserDisplay"
+
 class Home extends Component {
   render() {
     return (
@@ -16,6 +19,10 @@ class Home extends Component {
             return (
               authenticated ? <div>
                 <PrivateView />
+                <ActiveUserDisplay />
+                <UserFavorites />
+                <TopUser />
+                <UserGraph />
                 
               </div> : <PublicView />
             )
