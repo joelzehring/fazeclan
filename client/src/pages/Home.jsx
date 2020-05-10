@@ -18,8 +18,8 @@ class Home extends Component {
               authenticated ? <div>
                 <PrivateView />
                 <ActiveUserDisplay />
-                <UserFavorites />
-                <TopUser />
+                {/* <UserFavorites />
+                <TopUser /> */}
                 <UserGraph />
                 
               </div> : <PublicView />
