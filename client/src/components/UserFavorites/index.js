@@ -5,7 +5,8 @@ const cardParent = {
     paddingLeft: '50px',
     paddingRight: '50px',
     marginTop: '10px',
-    marginBottom: '10px'
+    marginBottom: '10px',
+    backgroundColor: '#4155AD'
 }
 
 const cardedStyle = {

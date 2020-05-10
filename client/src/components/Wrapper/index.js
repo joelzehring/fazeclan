@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from '../Navbar';
-import BgImage from '../../images/dark_wood.jpg'
 const Logo = require('../../images/gitclub_logo.png');
 
 
@@ -8,7 +7,6 @@ const Logo = require('../../images/gitclub_logo.png');
 // Container Styles
 const containerStyle = {
     padding: '0px',
-    backgroundImage: `url(${BgImage})`,
     backgroundRepeat: 'round',
     backgroundSize: 'cover'
 }
