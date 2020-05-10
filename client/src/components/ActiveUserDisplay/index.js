@@ -52,7 +52,7 @@ function ActiveUser() {
                 return (
                     <div className="row active-user" style={activeUserStyle}>
                         <div className="col-sm-3" style={activeUserInfoStyle}>
-                            {console.log(userProfile.name)}
+                            {/* {console.log(userProfile.name)} */}
                             <h2>{userProfile.name}</h2>
                             <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3>
                             <p>{userProfile.bio}</p>
