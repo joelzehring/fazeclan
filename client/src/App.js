@@ -14,9 +14,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/" exact component={Home}>
-              <Wrapper>
               <Home />
-              </Wrapper>
             </Route>
             <Route path="/battle">
             <Wrapper>
