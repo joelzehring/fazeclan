@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import Wrapper from '../Wrapper';
+import TopUser from '../TopUser';
+import UserFavorites from '../UserFavorites';
 
 function PrivateView () {
     return (
-        <Wrapper />
-
+        <div>
+        <TopUser />
+        <UserFavorites />
+        </div>
     )
 }
 

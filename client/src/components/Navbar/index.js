@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Divider from '@material-ui/core/Divider';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,6 +10,18 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import clsx from 'clsx';
+import Container from '@material-ui/core/Container';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Grid, Card } from '@material-ui/core';
+
+import Paper from '@material-ui/core/Paper';
+import Link from '@material-ui/core/Link';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+
+
 import ActiveUser from '../ActiveUser';
 import Search from '../Search';
 import SignInLink from '../SignInLink';
@@ -19,9 +32,7 @@ const Logo = require('../../images/gitclub_logo.png');
 
 
 
-
-
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -139,7 +150,16 @@ function ResponsiveDrawer(props) {
           </Drawer>
         </Hidden>
       </nav>
-      
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container maxWidth="lg" className={classes.container}>
+         
+
+
+
+
+        </Container>
+      </main>
     </div>
   );
 }
