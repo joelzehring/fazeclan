@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Wrapper from '../components/Wrapper'
-import TopUser from '../components/TopUser'
-import UserFavorites from '../components/UserFavorites'
 import { AuthContext } from '../contexts/AuthContext';
 import PublicView from '../components/PublicView/'
 import PrivateView from '../components/PrivateView'
+
 class Home extends Component {
   render() {
     return (
