@@ -2,3 +2,12 @@
     padding: 20px;
     overflow: visible;
 }
+
+.graphHolder {
+    border: 2px solid black;
+    padding: 3px;
+}
+
+.graphLabel {
+    text-align: center;
+}

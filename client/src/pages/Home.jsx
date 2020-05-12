@@ -11,21 +11,22 @@ import Wrapper from "../components/Wrapper"
 class Home extends Component {
   render() {
     return (
-      <div className="container">
-        
+      <div>
           <AuthContext.Consumer>{(context) => {
             const { authenticated } = context;
             return (
-              authenticated ? <div>
+              authenticated ? 
+              <div className="container">
+              <div>
                 <Wrapper />
                 <PrivateView />
                 <UserGraph />
-                
-              </div> : <PublicView />
+              </div>
+              </div>
+              : <PublicView />
             )
           }}
           </AuthContext.Consumer>
-        
       </div>
     );
   }

@@ -101,7 +101,10 @@ const CommitGraph = (props) => {
 
     });
     return (
+        <div className="graphHolder">
+        <h1 className="graphLabel">Your Recent Commit Contribution History</h1>
         <svg ref={ref} />
+        </div>
     )
 }
 
