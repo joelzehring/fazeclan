@@ -19,8 +19,9 @@ class Home extends Component {
               <div className="container">
               <div>
                 <Wrapper />
-                <PrivateView />
                 <UserGraph />
+                <PrivateView />
+                
               </div>
               </div>
               : <PublicView />
