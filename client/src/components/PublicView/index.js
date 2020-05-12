@@ -13,7 +13,12 @@ const activeUserStyle = {
     marginRight: '20px',
     marginBottom: '10px'
 }
-
+const backGroundStyle = {
+    backgroundColor: 'white',
+    width: '2000px',
+    height: '1000px',
+    margin: '0px'
+}
 const activeUserInfoStyle = {
     textAlign: 'center'
 };
@@ -40,9 +45,13 @@ const imageStyles = {
 };
 export default function PublicView() {
     return (
-        <div>
-            <h1>Welcome to GitClub</h1><h3>A place for friends.  Sign in with GitHub to see how you rank. <SignInLink /> </h3>
-            <TopUser />
+        <div style={backGroundStyle}>
+            <h1>Welcome to GitClub</h1>
+            <div><h4> Sign in with github to see your stats, earn badges, and see how you stack up to other users. </h4>
+            <a href="http://localhost:3001/auth/github">
+            <img src="/assets/images/githubicon.png" alt="github icon click to sign in"/>
+        </a>
+        </div>
         </div>
     )
 }
