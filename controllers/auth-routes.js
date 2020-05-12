@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
-const CLIENT_HOME_PAGE_URL = "https://git-club.herokuapp.com/";
+const CLIENT_HOME_PAGE_URL = "http://git-club.herokuapp.com/";
 
 // when login is successful, retrieve user info
 router.get("/login/success", (req, res) => {

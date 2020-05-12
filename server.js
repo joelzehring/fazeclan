@@ -75,7 +75,6 @@ const authCheck = (req, res, next) => {
 // otherwise, send a 401 response that the user is not authenticated
 // authCheck before navigating to home page
 app.get("/", authCheck, (req, res) => {
-  console.log(req.user.name);
   res.status(200).json({
     authenticated: true,
     message: "user successfully authenticated",
@@ -84,7 +83,7 @@ app.get("/", authCheck, (req, res) => {
   })
 })
 
-app.use('/', express.static(path.join(__dirname, '/client/build')));
+app.get('/', express.static(path.join(__dirname, '/client/build')));
 
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
