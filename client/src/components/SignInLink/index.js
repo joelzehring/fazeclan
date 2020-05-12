@@ -7,7 +7,7 @@ function SignInLink() {
   return (
     <AuthContext.Consumer>
       {value => (
-        <a href={ (value.authenticated) ? "http://localhost:3001/auth/logout ": "http://localhost:3001/auth/github" }>{ (value.authenticated) ? value.activeUser + " (logout)": "Sign In" } </a>
+        <a href={ (value.authenticated) ? "/auth/logout ": "/auth/github" }>{ (value.authenticated) ? value.activeUser + " (logout)": "Sign In" } </a>
       )}
     </AuthContext.Consumer>
   )
