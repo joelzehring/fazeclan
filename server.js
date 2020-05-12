@@ -13,6 +13,7 @@ const cookieParser = require("cookie-parser"); // parse cookie header
 const authRoutes = require("./controllers/auth-routes");
 const passportSetup = require("./passport-setup");
 const path = require("path");
+const router = require("express").Router();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -74,7 +75,7 @@ const authCheck = (req, res, next) => {
 // if it's already login, send the profile response,
 // otherwise, send a 401 response that the user is not authenticated
 // authCheck before navigating to home page
-app.get("/", authCheck, (req, res) => {
+router.get("/", authCheck, (req, res) => {
   res.status(200).json({
     authenticated: true,
     message: "user successfully authenticated",
