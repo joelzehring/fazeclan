@@ -93,15 +93,18 @@ const CommitGraph = (props) => {
             .attr("stroke-dasharray", totalLength + " " + totalLength)
             .attr("stroke-dashoffset", totalLength)
             .transition()
-            .delay(750)
-            .duration(5000)
+            .delay(950)
+            .duration(10000)
             .attr("stroke-dashoffset", 0)
             // .ease("easeLinear");
 
 
     });
     return (
+        <div className="graphHolder">
+        <h1 className="graphLabel">Your Last Sixty Days of Commits</h1>
         <svg ref={ref} />
+        </div>
     )
 }
 
