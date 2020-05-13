@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-
+// import SignInLink from ''
 
 
 const buttonStyle = {
@@ -18,7 +18,7 @@ export default class GitButton extends Component {
 
   return (
     <div>
-      <Button target="_blank" href="https://github.com/joelzehring/fazeclan" variant="contained" color="primary" style={buttonStyle}>Github Repo</Button>
+      <Button target="_blank" href="http://localhost:3001/auth/logout" variant="contained" color="primary" style={buttonStyle}>Logout</Button>
     </div>
   );
 }
