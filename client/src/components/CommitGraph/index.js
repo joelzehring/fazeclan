@@ -29,7 +29,7 @@ const CommitGraph = (props) => {
         const margin = { top: 50, right: 50, bottom: 50, left: 50 };
         const width = 800;
         // const width = window.innerWidth - margin.left - margin.right; // Use the window's width 
-        const height = window.innerHeight - margin.top - margin.bottom; // Use the window's height
+        const height = 300; 
 
         const xScale = d3.scaleTime()
             .domain(xExtent) // input
