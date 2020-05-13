@@ -5,8 +5,8 @@ import UserFavorites from '../UserFavorites';
 function PrivateView () {
     return (
         <div>
-        <TopUser />
-        <UserFavorites />
+        {/* <TopUser />
+        <UserFavorites /> */}
         </div>
     )
 }
