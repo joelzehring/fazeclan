@@ -1,7 +1,6 @@
 import React from 'react'
 import SignInLink from '../SignInLink'
 import TopUser from '../TopUser'
-import { GithubLoginButton } from "react-social-login-buttons";
 import { Link } from 'react-router-dom';
 import NewFooter from '../NewFooter';
 import AppBar from '@material-ui/core/AppBar';
