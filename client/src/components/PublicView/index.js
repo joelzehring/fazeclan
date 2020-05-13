@@ -9,7 +9,7 @@ import AppBar from '@material-ui/core/AppBar';
 const backGroundStyle = {
     backgroundColor: 'white',
     width: '100%',
-    height: '1000px',
+    height: '100vh',
     margin: '0px',
     paddingTop: '15%'
 }
@@ -33,9 +33,9 @@ const signInStyle = {
 const titleDivStyle = {
     // border: '1px white solid',
     borderRadius: '3px',
-    width: '600px',
+    width: '60%',
     height: '400px',
-    float: 'left',
+    // float: 'left',
     marginLeft: '20%',
     textAlign: 'left'
 }
@@ -47,12 +47,11 @@ export default function PublicView() {
             <div>
             <div style={titleDivStyle}>
             <h1 style={titleStyle}>Git<span style={clubStyle}>Club</span></h1>
-            <h2 style={descStyle}>An app for GitHub users that provides insight and data on their activity in a fun social environment. Created by Alfred Joel Kimberly Phil and Rachel</h2>
+            <h2 style={descStyle}>An app for GitHub users that provides insight and data on their activity in a fun social environment.</h2>
             <a href={"http://localhost:3001/auth/github"}>
             <img src="/assets/images/githubsignonbutton.png" /></a>
             </div>
-        </div>        
-        </div>        
-
+        </div>       
+        </div> 
     )
 }
