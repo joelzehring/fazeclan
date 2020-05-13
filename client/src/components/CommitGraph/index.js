@@ -5,7 +5,7 @@ import "./CommitGraph.css";
 const CommitGraph = (props) => {
     const ref = useRef();
     const { data } = props;
-    const daysToShow = 60;
+    const daysToShow = 30;
     const endDate = new Date();
     let startDate = new Date();
     startDate = startDate.setDate(startDate.getDate()-daysToShow);
@@ -27,9 +27,9 @@ const CommitGraph = (props) => {
         const yExtent = d3.extent(dataset.map((value) => value.y));
 
         const margin = { top: 50, right: 50, bottom: 50, left: 50 };
-        const width = 800;
+        const width = 600;
         // const width = window.innerWidth - margin.left - margin.right; // Use the window's width 
-        const height = 300; 
+        const height = 300; // Use the window's height
 
         const xScale = d3.scaleTime()
             .domain(xExtent) // input

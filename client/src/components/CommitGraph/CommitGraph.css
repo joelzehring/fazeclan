@@ -4,11 +4,13 @@
 }
 
 .graphHolder {
+    width: 711px;
     margin-top: 50px;
     border: 2px solid black;
-    padding: 3px;
+    border-radius: 3px;
+    padding-left: 10px;
 }
 
 .graphLabel {
-    text-align: center;
+    text-align: left;
 }

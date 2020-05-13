@@ -86,7 +86,6 @@ function ResponsiveDrawer(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <SignInLink />
       <Divider />
       <ActiveUser />
       <Divider />
