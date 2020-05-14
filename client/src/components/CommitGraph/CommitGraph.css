@@ -1,18 +1,14 @@
 .user-graph {
     padding: 20px;
     overflow: visible;
-    /* color: #3f51b5; */
 }
 
 .graphHolder {
-    width: 711px;
     margin-top: 50px;
     border: 2px solid black;
-    border-radius: 3px;
     padding-left: 10px;
 }
 
 .graphLabel {
     text-align: left;
 }
-
