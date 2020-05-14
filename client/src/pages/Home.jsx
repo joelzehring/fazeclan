@@ -9,6 +9,7 @@ import TopUser from "../components/TopUser";
 import UserFavorites from "../components/UserFavorites";
 import Wrapper from "../components/Wrapper";
 import Badges from "../components/Badges";
+import API from '../utils/api';
 
 class Home extends Component {
   state = {
