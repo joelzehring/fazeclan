@@ -68,7 +68,7 @@ class Battle extends Component {
                           icon={['fas', 'arrow-down']}
                           className="font-size-sm text-danger mr-2"
                         />
-                    Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}
+                    {/* Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions} */}
                       </div>
                       <div className="text-black-50 text-center opacity-6 pt-3">
                         <b>Fighter One</b>
@@ -94,7 +94,7 @@ class Battle extends Component {
                           icon={['fas', 'arrow-down']}
                           className="font-size-sm text-danger mr-2"
                         />
-                    Total Commits: {(this.state.secondPlayer) ? this.state.secondPlayer.contributionsCollection && this.state.secondPlayer.contributionsCollection.totalCommitContributions : ""}
+                    {/* Total Commits: {(this.state.secondPlayer) ? this.state.secondPlayer.contributionsCollection && this.state.secondPlayer.contributionsCollection.totalCommitContributions : ""} */}
                       </div>
                       <div className="text-black-50 text-center opacity-6 pt-3">
                         <b>Fighter Two</b>
