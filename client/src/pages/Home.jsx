@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { AuthContext } from '../contexts/AuthContext';
-import PublicView from '../components/PublicView/'
-import PrivateView from '../components/PrivateView'
-import UserGraph from "../components/UserGraph"
-import ActiveUserDisplay from "../components/ActiveUserDisplay"
-import TopUser from "../components/TopUser"
-import UserFavorites from "../components/UserFavorites"
-import Wrapper from "../components/Wrapper"
-import API from "../utils/api"
+import PublicView from '../components/PublicView/';
+import PrivateView from '../components/PrivateView';
+import UserGraph from "../components/UserGraph";
+import ActiveUserDisplay from "../components/ActiveUserDisplay";
+import TopUser from "../components/TopUser";
+import UserFavorites from "../components/UserFavorites";
+import Wrapper from "../components/Wrapper";
+import Badges from "../components/Badges";
 
 class Home extends Component {
   state = {
@@ -45,6 +45,7 @@ class Home extends Component {
               <div>
                 <Wrapper />
                 <UserGraph />
+                <Badges />
                 <PrivateView />
                 
               </div>
