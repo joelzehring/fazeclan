@@ -93,6 +93,7 @@ class Battle extends Component {
 
 
                   {/* Github User */}
+                  {(this.state.secondPlayer.avatarUrl) ?
                   <Grid item xs={12} sm={4} lg={4}>
                     <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
@@ -115,9 +116,8 @@ class Battle extends Component {
                         <b>Fighter Two</b>
                       </div>
                     </Card>
-                  {(this.state.secondPlayer.avatarUrl) ?
-                  <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button> : <div></div>}
-                  </Grid>
+                  <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button>
+                  </Grid> : <div></div>}
 
                   {/*Winner Card */}
                   {(this.state.winner.avatarUrl) ? 
