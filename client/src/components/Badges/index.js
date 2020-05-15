@@ -43,7 +43,7 @@ class Badges extends Component {
                     <div className="carded" style={cardedStyle}>
                         <div className="card-body text-center">
                             <div className="col-sm-12">
-                                <h3>Total Commits: {this.context.userProfile.contributionsCollection && this.context.userProfile.contributionsCollection.totalCommitContributions}</h3>
+                                <h3>Commits: {this.context.userProfile.contributionsCollection && this.context.userProfile.contributionsCollection.totalCommitContributions}</h3>
                             </div>
 
                             <div className="row">
@@ -84,7 +84,7 @@ class Badges extends Component {
                     <div classname="row carded" style={cardedStyle}>
                         <div className="card-body text-center">
                             <div className="col-sm-12">
-                                <h3>Total Followers: {this.context.userProfile.followers && this.context.userProfile.followers.totalCount}</h3> </div>
+                                <h3>Followers: {this.context.userProfile.followers && this.context.userProfile.followers.totalCount}</h3> </div>
                             <div className="row">
                                 {(this.context.tenFollowers)
                                     ? (
@@ -115,7 +115,7 @@ class Badges extends Component {
                     <div className="row carded" style={cardedStyle}>
                         <div className="card-body text-center">
                             <div className="col-sm-12">
-                                <h3>Total Repos: {this.context.userProfile.repositories && this.context.userProfile.repositories.totalCount}</h3></div>
+                                <h3>Repos: {this.context.userProfile.repositories && this.context.userProfile.repositories.totalCount}</h3></div>
                                 <div className="row">
                             {(this.context.tenRepos)
                                 ? (
