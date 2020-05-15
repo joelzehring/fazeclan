@@ -37,7 +37,7 @@ class UserSearch extends React.Component {
     if (this.state.toSearch === true) {
       return <Redirect to={{
         pathname: '/search',
-        state: { message: "hello" }
+        state: { searchedUser: this.state.searchedUser }
       }} />
     }
         return (
