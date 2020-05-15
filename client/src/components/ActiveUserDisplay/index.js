@@ -6,8 +6,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 // Overall Page Style
 const activeUserStyle = {
-    color: 'white',
-    border: 'white',
+    color: 'rgb(63,81,181)',
+    border: 'rgb(63,81,181)',
     borderStyle: 'solid',
     borderRadius: '20px',
     borderWidth: '2px',
@@ -15,11 +15,12 @@ const activeUserStyle = {
     marginTop: '30px',
     marginLeft: '20px',
     marginRight: '20px',
-    marginBottom: '10px'
+    marginBottom: '10px',
+    width: '60%'
 }
 
 const activeUserInfoStyle = {
-    textAlign: 'center'
+    textAlign: 'left'
 };
 
 // Buttons Parent Style
@@ -39,7 +40,7 @@ const buttonStyles = {
 // Image Styles
 const imageStyles = {
     position: 'relative',
-    width: '100%',
+    width: 'auto',
     margin: '0 auto'
 };
 
@@ -54,18 +55,10 @@ function ActiveUser() {
                         <div className="col-sm-3" style={activeUserInfoStyle}>
                             {/* {console.log(userProfile.name)} */}
                             <h2>{userProfile.name}</h2>
-                            <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3>
+                            {/* <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3> */}
                             <p>{userProfile.bio}</p>
                         </div>
                         <div className="col-sm-6" style={buttonParentStyle}>
-                            <Button variant="contained" color="primary" style={buttonStyles}>
-                                Github
-                            </Button>
-                            <Button variant="contained" color="primary" style={buttonStyles}>
-                                Git Stats
-                            </Button>
-                            <GitBattleButton />
-                            <FormModal />
                         </div>
                         <div className="col-sm-3">
                             <div className="profile-pic-holder" style={imageStyles}>

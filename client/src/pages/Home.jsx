@@ -49,6 +49,7 @@ class Home extends Component {
               <div>
                 <Wrapper />
                 <Badges />
+                <ActiveUserDisplay />
                 <UserGraph />
                 <PrivateView />
                 
