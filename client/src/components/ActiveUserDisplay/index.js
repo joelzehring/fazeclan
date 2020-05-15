@@ -13,9 +13,12 @@ const activeUserStyle = {
     padding: '50px',
     marginTop: '30px',
     marginLeft: '20px',
-    marginRight: '20px',
+    // marginRight: '20px',
     marginBottom: '10px'
     // width: '30%'
+}
+const removePadding = {
+    padding: '0px'
 }
 
 const activeUserInfoStyle = {
@@ -64,7 +67,7 @@ function ActiveUser() {
                             </div>
 
                         </div>                           
-                         <div className="col-sm-12 col-md-8 col-lg-7">
+                         <div className="col-sm-12 col-md-8 col-lg-7" style={removePadding}>
                                 <UserGraph />
                             </div>
                         <br />
