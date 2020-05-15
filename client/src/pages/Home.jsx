@@ -10,6 +10,9 @@ import UserFavorites from "../components/UserFavorites";
 import Wrapper from "../components/Wrapper";
 import Badges from "../components/Badges";
 import API from '../utils/api';
+import Search from '../components/Search';
+import { Redirect } from 'react-router-dom';
+import UserSearch from '../components/UserSearch';
 
 const backgroundStyle = {
   backgroundColor: 'white'
@@ -17,7 +20,8 @@ const backgroundStyle = {
 class Home extends Component {
   state = {
     search: "",
-    searchedUser: {}
+    searchedUser: {},
+    toSearch: false
   }
 
   handleChange = (event) => {
@@ -35,14 +39,21 @@ class Home extends Component {
         this.setState({
           searchedUser: result.data.data.user
         })
-        console.log("search result: ", result);
+        this.setState({
+          toSearch: true
+        })
+        console.log("search result: ", this.state.searchedUser);
       })
   }
+  
   render() {
+    if (this.state.toSearch === true) {
+      return <Redirect to='/search' />
+    }
     return (
       <div style={backgroundStyle}>
           <AuthContext.Consumer>{(context) => {
-            const { authenticated } = context;
+            const { authenticated } = context
             return (
               authenticated ? 
               <div>
@@ -61,7 +72,7 @@ class Home extends Component {
           }}
           </AuthContext.Consumer>
       </div>
-    );
+    )
   }
 }
 export default Home;
