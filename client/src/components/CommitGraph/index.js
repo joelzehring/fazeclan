@@ -8,7 +8,7 @@ const CommitGraph = (props) => {
     const daysToShow = 30;
     const endDate = new Date();
     let startDate = new Date();
-    startDate = startDate.setDate(startDate.getDate()-daysToShow);
+    startDate = startDate.setDate(startDate.getDate() - daysToShow);
 
     useEffect(() => {
         const svg = d3.select(ref.current)
@@ -98,14 +98,14 @@ const CommitGraph = (props) => {
             .delay(950)
             .duration(10000)
             .attr("stroke-dashoffset", 0)
-            // .ease("easeLinear");
+        // .ease("easeLinear");
 
 
     });
     return (
         <div className="graphHolder">
-        <h1 className="graphLabel">Your Last Month of Commits</h1>
-        <svg ref={ref} />
+            <h1 className="graphLabel">Daily Commit History (30days)</h1>
+            <svg ref={ref} />
         </div>
     )
 }

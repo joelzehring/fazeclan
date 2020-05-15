@@ -4,13 +4,14 @@
 }
 
 .graphHolder {
-    width: 70vh;
-    margin-top: 50px;
-    border: 2px solid black;
+    width: 100vh;
+    margin-top: 30px;
+    border: 2px solid rgb(63,81,181);
     border-radius: 10px;
-    padding-left: 10px;
+    padding: 50px;
 }
 
 .graphLabel {
     text-align: left;
+    color: rgb(63,81,181);
 }
