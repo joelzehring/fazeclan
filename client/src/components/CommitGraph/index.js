@@ -65,8 +65,9 @@ const CommitGraph = (props) => {
 
         // Add the path (the line)
         const path = svg.append("path")
+            .style("stroke", "#3f51b5")
             .style("fill", "none")
-            .style("stroke", "#000")
+            .style("stroke-width", "2")
             .datum(dataset)
             .attr("class", "line") // Assign a class for styling 
             .attr("d", line) // Calls the line generator 
@@ -81,6 +82,7 @@ const CommitGraph = (props) => {
             .attr("cx", function (d, i) { return xScale(new Date(d.x)) })
             .attr("cy", function (d) { return yScale(d.y) })
             .attr("r", 5)
+            .style("fill", "#3f51b5")
             .on("mouseover", function (a, b, c) {
                 console.log(a)
             })
@@ -102,7 +104,7 @@ const CommitGraph = (props) => {
     });
     return (
         <div className="graphHolder">
-        <h1 className="graphLabel">Your Last Sixty Days of Commits</h1>
+        <h1 className="graphLabel">Your Last Month of Commits</h1>
         <svg ref={ref} />
         </div>
     )
