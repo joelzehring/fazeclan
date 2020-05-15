@@ -18,38 +18,8 @@ const backgroundStyle = {
   backgroundColor: 'white'
 }
 class Home extends Component {
-  state = {
-    search: "",
-    searchedUser: {},
-    toSearch: false
-  }
 
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    })
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    API.getGraphQL(this.state.search)
-      .then((result) => {
-
-        this.setState({
-          searchedUser: result.data.data.user
-        })
-        this.setState({
-          toSearch: true
-        })
-        console.log("search result: ", this.state.searchedUser);
-      })
-  }
-  
   render() {
-    if (this.state.toSearch === true) {
-      return <Redirect to='/search' />
-    }
     return (
       <div style={backgroundStyle}>
           <AuthContext.Consumer>{(context) => {
@@ -61,8 +31,7 @@ class Home extends Component {
                 <Wrapper />
                 <div className="container">
                 <Badges />
-                <ActiveUserDisplay />
-                {/* <UserGraph /> */}
+                <UserSearch />
                 <PrivateView />
                 </div>
               </div>
