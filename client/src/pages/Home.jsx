@@ -11,6 +11,9 @@ import Wrapper from "../components/Wrapper";
 import Badges from "../components/Badges";
 import API from '../utils/api';
 
+const backgroundStyle = {
+  backgroundColor: 'white'
+}
 class Home extends Component {
   state = {
     search: "",
@@ -37,16 +40,17 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={backgroundStyle}>
           <AuthContext.Consumer>{(context) => {
             const { authenticated } = context;
             return (
               authenticated ? 
-              <div className="container">
+              <div>
               <div>
                 <Wrapper />
-                <UserGraph />
                 <Badges />
+                <ActiveUserDisplay />
+                <UserGraph />
                 <PrivateView />
                 
               </div>

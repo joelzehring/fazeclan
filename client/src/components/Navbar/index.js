@@ -122,10 +122,10 @@ function ResponsiveDrawer(props) {
           <img className="logo" style={logoStyle} src={Logo} alt=""/>
         </Toolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      {/* <nav className={classes.drawer} aria-label="mailbox folders"> */}
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
-          <Drawer
+        {/* <Hidden smUp implementation="css"> */}
+          {/* <Drawer
             container={container}
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
@@ -139,10 +139,10 @@ function ResponsiveDrawer(props) {
             }}
           >
             {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
+          </Drawer> */}
+        {/* </Hidden>
+        <Hidden xsDown implementation="css"> */}
+          {/* <Drawer
             classes={{
               paper: classes.drawerPaper,
             }}
@@ -150,9 +150,9 @@ function ResponsiveDrawer(props) {
             open
           >
             {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
+          </Drawer> */}
+        {/* </Hidden> */}
+      {/* </nav> */}
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
