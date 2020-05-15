@@ -9,8 +9,32 @@ import TopUser from "../components/TopUser";
 import UserFavorites from "../components/UserFavorites";
 import Wrapper from "../components/Wrapper";
 import Badges from "../components/Badges";
+import API from '../utils/api';
 
 class Home extends Component {
+  state = {
+    search: "",
+    searchedUser: {}
+  }
+
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    API.getGraphQL(this.state.search)
+      .then((result) => {
+
+        this.setState({
+          searchedUser: result.data.data.user
+        })
+        console.log("search result: ", result);
+      })
+  }
   render() {
     return (
       <div>
