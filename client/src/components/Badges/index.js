@@ -40,114 +40,108 @@ class Badges extends Component {
         return (
             <div className="row">
                 <div className="col-lg-4 commit-badges" style={cardParent}>
-                    <div className="row carded" style={cardedStyle}>
+                    <div className="carded" style={cardedStyle}>
                         <div className="card-body text-center">
                             <div className="col-sm-12">
                                 <h3>Total Commits: {this.context.userProfile.contributionsCollection && this.context.userProfile.contributionsCollection.totalCommitContributions}</h3>
                             </div>
-                            {(this.context.oneHundredCommits)
-                                ? (
-                                    <div className="badge text-center" key={1}>
-                                        <div className="col-sm-6">
+
+                            <div className="row">
+                                {(this.context.oneHundredCommits)
+                                    ? (
+                                        <div className="col-sm-6 badge text-center" key={1}>
                                             <img src="/assets/images/commit-badge-100.png" alt="100commits" style={badgeStyle} />
-                                            </div>
-                                            </div>
-                                                ) : <div></div>}
-                                            {(this.context.twoFiftyCommits)
-                                                ? (
-                                                    <div className="badge text-center" key={2}>
-                                                        <div className="col-sm-6">
-                                                            <img src="/assets/images/commit-badge-250.png" alt="250commits" style={badgeStyle} />
-                                                        </div>
-                                                    </div>
-                                                ) : <div></div>}
-                                            {(this.context.fiveHundredCommits)
-                                                ? (
-                                                    <div className="badge text-center" key={3}>
-                                                        <div className="col-sm-6">
-                                                            <img src="/assets/images/commit-badge-500.png" alt="500commits" style={badgeStyle} />
-                                                        </div>
-                                                    </div>
-                                                ) : <div></div>}
-                                            {(this.context.oneThousandCommits)
-                                                ? (
-                                                    <div className="badge text-center" key={3}>
-                                                        <div className="col-sm-6">
-                                                            <img src="/assets/images/commit-badge-1000.png" alt="1000commits" style={badgeStyle} />
-                                                        </div>
-                                                    </div>
-                                                ) : <div></div>}
                                         </div>
-                                    </div>
-                    </div>
 
-
-                        <div className="col-lg-4 followers-badges" style={cardParent}>
-                            <div classname="row carded" style={cardedStyle}>
-                                <div className="card-body text-center">
-                                    <div className="col-sm-12">
-                                        <h3>Total Followers: {this.context.userProfile.followers && this.context.userProfile.followers.totalCount}</h3> </div>
-                                    {(this.context.tenFollowers)
-                                        ? (
-                                            <div className="badge text-center" key={3}>
-                                                <div className="col-sm-6">
-                                                <img src="/assets/images/follower-badge-10.png" alt="10followers" style={badgeStyle} />
-                                                </div>
-                                            </div>
-                                        ) : <div></div>}
-                                    {(this.context.twentyFiveFollowers)
-                                        ? (
-                                            <div className="badge text-center" key={3}>
-                                                <div className="col-sm-6">
-                                                <img src="/assets/images/follower-badge-25.png" alt="25followers"  style={badgeStyle}/>
-                                                </div>
-                                            </div>
-                                        ) : <div></div>}
-                                    {(this.context.fiftyFollowers)
-                                        ? (
-                                            <div className="badge text-center" key={3}>
-                                                <div className="col-sm-6">
-                                                <img src="/assets/images/follower-badge-50.png" alt="50followers" style={badgeStyle} />
-                                                </div>
-                                            </div>
-                                        ) : <div></div>}
-                                </div>
+                                    ) : <div></div>}
+                                {(this.context.twoFiftyCommits)
+                                    ? (
+                                        <div className="col-sm-6 badge text-center" key={2}>
+                                            <img src="/assets/images/commit-badge-250.png" alt="250commits" style={badgeStyle} />
+                                        </div>
+                                    ) : <div></div>}
                             </div>
-                        </div>
-
-                        <div className="col-lg-4 repo-badges" style={cardParent}>
-                            <div className="row carded" style={cardedStyle}>
-                                <div className="card-body text-center">
-                                    <div className="col-sm-12">
-                                        <h3>Total Repos: {this.context.userProfile.repositories && this.context.userProfile.repositories.totalCount}</h3></div>
-                                    {(this.context.tenRepos)
-                                        ? (
-                                            <div className="badge text-center" key={3}>
-                                                <div className="col-sm-6">
-                                                <img src="/assets/images/repo-badge-10.png" alt="10repos"  style={badgeStyle}/>
-                                                </div>
-                                            </div>
-                                        ) : <div></div>}
-                                    {(this.context.twentyFiveRepos)
-                                        ? (
-                                            <div className="badge text-center" key={3}>
-                                                <div className="col-sm-6" >
-                                                <img src="/assets/images/repo-badge-25.png" alt="25repos" style={badgeStyle} />
-                                                </div>
-                                            </div>
-                                        ) : <div></div>}
-                                    {(this.context.fiftyRepos)
-                                        ? (
-                                            <div className="badge text-center" key={3}>
-                                                <div className="col-sm-6">                                                
-                                                <img src="/assets/images/repo-badge-50.png" alt="50repos"  style={badgeStyle}/>
-                                                </div>
-                                            </div>
-                                        ) : <div></div>}
-                                </div>
+                            <div className="row">
+                                {(this.context.fiveHundredCommits)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/commit-badge-500.png" alt="500commits" style={badgeStyle} />
+                                        </div>
+                                    ) : <div></div>}
+                                {(this.context.oneThousandCommits)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/commit-badge-1000.png" alt="1000commits" style={badgeStyle} />
+                                        </div>
+                                    ) : <div></div>}
                             </div>
                         </div>
                     </div>
+                </div>
+
+
+                <div className="col-lg-4 followers-badges" style={cardParent}>
+                    <div classname="row carded" style={cardedStyle}>
+                        <div className="card-body text-center">
+                            <div className="col-sm-12">
+                                <h3>Total Followers: {this.context.userProfile.followers && this.context.userProfile.followers.totalCount}</h3> </div>
+                            <div className="row">
+                                {(this.context.tenFollowers)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/follower-badge-10.png" alt="10followers" style={badgeStyle} />
+                                        </div>
+                                    ) : <div></div>}
+                                {(this.context.twentyFiveFollowers)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/follower-badge-25.png" alt="25followers" style={badgeStyle} />
+                                        </div>
+                                    ) : <div></div>}
+                            </div>
+                            <div className="row">
+                                {(this.context.fiftyFollowers)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/follower-badge-50.png" alt="50followers" style={badgeStyle} />
+                                        </div>
+                                    ) : <div></div>}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="col-lg-4 repo-badges" style={cardParent}>
+                    <div className="row carded" style={cardedStyle}>
+                        <div className="card-body text-center">
+                            <div className="col-sm-12">
+                                <h3>Total Repos: {this.context.userProfile.repositories && this.context.userProfile.repositories.totalCount}</h3></div>
+                                <div className="row">
+                            {(this.context.tenRepos)
+                                ? (
+                                    <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/repo-badge-10.png" alt="10repos" style={badgeStyle} />
+                                        </div>
+                                ) : <div></div>}
+                            {(this.context.twentyFiveRepos)
+                                ? (
+                                    <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/repo-badge-25.png" alt="25repos" style={badgeStyle} />
+                                        </div>
+                                ) : <div></div>}
+                                </div>
+                                <div className="row">
+                            {(this.context.fiftyRepos)
+                                ? (
+                                    <div className="badge text-center col-sm-6" key={3}>
+                                            <img src="/assets/images/repo-badge-50.png" alt="50repos" style={badgeStyle} />
+                                        </div>
+                                ) : <div></div>}
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
