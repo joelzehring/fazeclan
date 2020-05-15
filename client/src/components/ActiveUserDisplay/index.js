@@ -21,6 +21,9 @@ const activeUserStyle = {
 const activeUserInfoStyle = {
     textAlign: 'left'
 };
+const rowStyle = {
+    marginBottom: '50px'
+}
 
 // Buttons Parent Style
 const buttonParentStyle = {
@@ -50,8 +53,8 @@ function ActiveUser() {
             {(context) => {
                 const { userProfile } = context;
                 return (
-                    <div className="row active-user">
-                        <div className="col-sm-12 col-md-5"  style={activeUserStyle}>
+                    <div className="row" style={rowStyle}>
+                        <div className="col-sm-12 col-md-3"  style={activeUserStyle}>
                             {/* {console.log(userProfile.name)} */}
                             <h2>{userProfile.name}</h2>
                             {/* <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3> */}
@@ -61,7 +64,7 @@ function ActiveUser() {
                             </div>
 
                         </div>                           
-                         <div className="col-sm-12 col-md-4">
+                         <div className="col-sm-12 col-md-8 col-lg-7">
                                 <UserGraph />
                             </div>
                         <br />

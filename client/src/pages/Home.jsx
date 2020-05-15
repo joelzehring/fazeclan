@@ -48,11 +48,12 @@ class Home extends Component {
               <div>
               <div>
                 <Wrapper />
+                <div className="container">
                 <Badges />
                 <ActiveUserDisplay />
                 {/* <UserGraph /> */}
                 <PrivateView />
-                
+                </div>
               </div>
               </div>
               : <PublicView />
