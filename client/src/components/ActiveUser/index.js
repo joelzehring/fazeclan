@@ -20,7 +20,6 @@ function ActiveUser() {
                 return (
                     <div className="row active-user" >
                         <div className="col-sm-12" >
-                            {console.log(userProfile.name)}
                             <h2>{userProfile.name}</h2>
                             <p>{userProfile.bio}</p>
                         </div>

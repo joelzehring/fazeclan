@@ -57,9 +57,8 @@ function ActiveUser() {
             {(context) => {
                 const { userProfile } = context;
                 return (
-                    <div className="row" style={rowStyle}>
-                        <div className="col-sm-12 col-md-3"  style={activeUserStyle}>
-                            {/* {console.log(userProfile.name)} */}
+                    <div className="row active-user" style={activeUserStyle}>
+                        <div className="col-sm-3" style={activeUserInfoStyle}>
                             <h2>{userProfile.name}</h2>
                             {/* <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3> */}
                             <p>{userProfile.bio}</p>

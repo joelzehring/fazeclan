@@ -35,12 +35,12 @@ const badgeStyle = {
 
 class Badges extends Component {
     componentDidMount() {
-        console.log("initial: ", this.context);
+
 
     }
 
     componentDidUpdate() {
-        console.log("updated: ", this.context);
+
     }
 
     //TODO: add images to a package.json and add paths to each badge image
@@ -75,7 +75,7 @@ class Badges extends Component {
                                     ) : <div></div>}
                                 {(this.context.oneThousandCommits)
                                     ? (
-                                        <div className="badge text-center col-sm-2 col-md-3" key={3}>
+                                        <div className="badge text-center col-sm-6" key={4}>
                                             <img src="/assets/images/commit-badge-1000.png" alt="1000commits" style={badgeStyle} />
                                         </div>
                                     ) : <div></div>}

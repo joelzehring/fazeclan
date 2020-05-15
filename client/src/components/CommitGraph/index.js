@@ -73,7 +73,7 @@ const CommitGraph = (props) => {
             .attr("d", line) // Calls the line generator 
 
 
-        // console.log(totalLength);
+
         // Add dots
         svg.selectAll(".dot")
             .data(dataset)
@@ -84,12 +84,12 @@ const CommitGraph = (props) => {
             .attr("r", 5)
             .style("fill", "#3f51b5")
             .on("mouseover", function (a, b, c) {
-                console.log(a)
+  
             })
             .on("mouseout", function () {
 
             })
-        console.log("path: ", path)
+
         const totalLength = path.node().getTotalLength();
         path
             .attr("stroke-dasharray", totalLength + " " + totalLength)

@@ -37,7 +37,6 @@ class Battle extends Component {
         this.setState({
           secondPlayer: result.data.data.user
         })
-        console.log(this.state.secondPlayer);
       })
       
   }
