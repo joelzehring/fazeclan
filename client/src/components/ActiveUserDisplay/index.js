@@ -3,8 +3,7 @@ import FormModal from '../UserForm/FormModal';
 import GitBattleButton from '../UserForm/GitBattleButton';
 import Button from '@material-ui/core/Button';
 import { AuthContext } from "../../contexts/AuthContext";
-
-// Overall Page Style
+import UserGraph from '../UserGraph'
 const activeUserStyle = {
     color: 'rgb(63,81,181)',
     border: 'rgb(63,81,181)',
@@ -40,7 +39,7 @@ const buttonStyles = {
 // Image Styles
 const imageStyles = {
     position: 'relative',
-    width: 'auto',
+    // width: '50%',
     margin: '0 auto'
 };
 
@@ -60,9 +59,11 @@ function ActiveUser() {
                             <div className="profile-pic-holder" style={imageStyles}>
                                 <img className='card-img' src={userProfile.avatarUrl} alt="Profile pic" />
                             </div>
-                        </div>
-                        <div className="col-sm-3">
-                        </div>
+
+                        </div>                           
+                         <div className="col-sm-12 col-md-4">
+                                <UserGraph />
+                            </div>
                         <br />
                     </div>
                 )
