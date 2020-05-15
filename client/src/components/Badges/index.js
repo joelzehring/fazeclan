@@ -19,10 +19,11 @@ const cardedStyle = {
 }
 
 const badgeStyle = {
-    width: '100%',
+    width: '65px',
     display: 'block',
     // borderRadius: '20px',
-    margin: 'auto',
+    margin: 'auto'
+    // boxShadow: '5px 5px 5px 5px'
 }
 
 class Badges extends Component {
@@ -42,7 +43,7 @@ class Badges extends Component {
                 <div className="col-lg-4 commit-badges" style={cardParent}>
                     <div className="carded" style={cardedStyle}>
                         <div className="card-body text-center">
-                            <div className="col-sm-12">
+                            <div className="col-sm-12 col-md-3">
                                 <h3>Commits: {this.context.userProfile.contributionsCollection && this.context.userProfile.contributionsCollection.totalCommitContributions}</h3>
                             </div>
 

@@ -4,7 +4,7 @@
 }
 
 .graphHolder {
-    width: 100vh;
+    /* width: 100vh; */
     margin-top: 30px;
     border: 2px solid rgb(63,81,181);
     border-radius: 20px;
