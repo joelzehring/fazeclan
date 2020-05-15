@@ -112,6 +112,7 @@ class Battle extends Component {
                   </Grid>
 
                   {/*Winner Card */}
+                  {(this.state.winner.name) ? 
                   <Grid item xs={12} sm={4} lg={4}>
                     <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
@@ -134,7 +135,7 @@ class Battle extends Component {
                         <b>WINNER</b>
                       </div>
                     </Card>
-                  </Grid>
+                  </Grid> : <div></div>}
                 </Grid>
 
                 <Grid container spacing={6}>
