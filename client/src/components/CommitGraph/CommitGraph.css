@@ -4,8 +4,10 @@
 }
 
 .graphHolder {
+    width: 70vh;
     margin-top: 50px;
     border: 2px solid black;
+    border-radius: 10px;
     padding-left: 10px;
 }
 
