@@ -14,6 +14,9 @@ import Search from '../components/Search';
 import { Redirect } from 'react-router-dom';
 import UserSearch from '../components/UserSearch';
 
+const backgroundStyle = {
+  backgroundColor: 'white'
+}
 class Home extends Component {
   state = {
     search: "",
@@ -48,15 +51,14 @@ class Home extends Component {
       return <Redirect to='/search' />
     }
     return (
-      <div>
+      <div style={backgroundStyle}>
           <AuthContext.Consumer>{(context) => {
             const { authenticated } = context
             return (
               authenticated ? 
-              <div className="container">
+              <div>
               <div>
                 <Wrapper />
-                <UserGraph />
                 <Badges />
                 <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} search={this.state.search}/>
                 <UserSearch />
