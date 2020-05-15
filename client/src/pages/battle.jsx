@@ -29,23 +29,29 @@ class Battle extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.setState({ winner: {} })
+    this.setState({ secondPlayer: {} })
     API.getGraphQL(this.state.search)
       .then((result) => {
 
         this.setState({
           secondPlayer: result.data.data.user
         })
-        if (this.context.userProfile.contributionsCollection.totalCommitContributions > this.state.secondPlayer.contributionsCollection.totalCommitContributions) {
-          this.setState({ winner: this.context.userProfile });
-        }
-        else {
-          this.setState({ winner: this.state.secondPlayer});
-        }
-        console.log("search result: ", result);
-        console.log("context: ", this.context);
-        console.log("winner: ", this.state.winner);
+        console.log(this.state.secondPlayer);
       })
+      
   }
+
+  battle = (event) => {
+  event.preventDefault();
+  if (this.context.userProfile.contributionsCollection.totalCommitContributions > this.state.secondPlayer.contributionsCollection.totalCommitContributions) {
+    this.setState({ winner: this.context.userProfile });
+  }
+  else {
+    this.setState({ winner: this.state.secondPlayer});
+  }
+  }
+
   render() {
     return (
       <AuthContext.Consumer>
@@ -109,10 +115,12 @@ class Battle extends Component {
                         <b>Fighter Two</b>
                       </div>
                     </Card>
+                  {(this.state.secondPlayer.avatarUrl) ?
+                  <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button> : <div></div>}
                   </Grid>
 
                   {/*Winner Card */}
-                  {(this.state.winner.name) ? 
+                  {(this.state.winner.avatarUrl) ? 
                   <Grid item xs={12} sm={4} lg={4}>
                     <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
