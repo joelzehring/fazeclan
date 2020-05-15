@@ -15,8 +15,8 @@ const activeUserStyle = {
     marginTop: '30px',
     marginLeft: '20px',
     marginRight: '20px',
-    marginBottom: '10px',
-    width: '60%'
+    marginBottom: '10px'
+    // width: '30%'
 }
 
 const activeUserInfoStyle = {
@@ -51,19 +51,17 @@ function ActiveUser() {
             {(context) => {
                 const { userProfile } = context;
                 return (
-                    <div className="row active-user" style={activeUserStyle}>
-                        <div className="col-sm-3" style={activeUserInfoStyle}>
+                    <div className="row active-user">
+                        <div className="col-sm-12 col-md-5"  style={activeUserStyle}>
                             {/* {console.log(userProfile.name)} */}
                             <h2>{userProfile.name}</h2>
                             {/* <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3> */}
                             <p>{userProfile.bio}</p>
-                        </div>
-                        <div className="col-sm-6" style={buttonParentStyle}>
-                        </div>
-                        <div className="col-sm-3">
                             <div className="profile-pic-holder" style={imageStyles}>
                                 <img className='card-img' src={userProfile.avatarUrl} alt="Profile pic" />
                             </div>
+                        </div>
+                        <div className="col-sm-3">
                         </div>
                         <br />
                     </div>
