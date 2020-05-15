@@ -1,44 +1,50 @@
 import React from "react";
 import Navbar from '../Navbar';
+import SearchAppBar from '../SearchAppBar'
 const Logo = require('../../images/gitclub_logo.png');
 
 
 
 // Container Styles
 const containerStyle = {
-    padding: '0px',
-    backgroundRepeat: 'round',
-    backgroundSize: 'cover'
+  padding: '0px',
+  backgroundRepeat: 'round',
+  backgroundSize: 'cover',
+  backgroundColor: 'white'
 }
 
 // Body Styles
 const bodyStyle = {
-  height: '100vh'
+  // height: '100vh',
+  backgroundColor: 'white'
 }
 
 // Logo Styles
 const logoStyle = {
-    width: '150px'
+  width: '150px'
 }
 
 // Nav Styles
 const navStyle = {
-    borderBottom: '3px, white',
-    backgroundColor: '303030'
+  borderBottom: '3px, white',
+  backgroundColor: '303030'
 }
 
 // Page
 function Wrapper(props) {
   return (
     <>
-      <div className="container-fluid" style={containerStyle}>
-        <div className="body" >
-          <Navbar />
-          <div className={`wrapper ${props.class}`}>{props.children}
+      <SearchAppBar />
+      <div style={bodyStyle}>
+
+        <div className="container-fluid" style={containerStyle}>
+          <div className="body" >
+
+            <div className={`wrapper ${props.class}`}>{props.children}
+            </div>
           </div>
         </div>
       </div>
-      
     </>
   );
 }
