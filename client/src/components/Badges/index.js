@@ -11,7 +11,7 @@ const cardParent = {
 
 const cardedStyle = {
     color: 'black',
-    border: 'black',
+    border: 'rgb(63,81,181)',
     borderStyle: 'solid',
     borderRadius: '20px',
     borderWidth: '2px',
