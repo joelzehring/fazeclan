@@ -12,6 +12,7 @@ const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser"); // parse cookie header
 const authRoutes = require("./controllers/auth-routes");
 const passportSetup = require("./passport-setup");
+const router = require("express").Router();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -48,7 +49,7 @@ app.use(passport.session());
 // set up cors to allow us to accept requests from our client
 app.use(
   cors({
-    origin: "http://localhost:3000", // allow to server to accept request from different origin
+    origin: process.env.ORIGIN_URL, // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true // allow session cookie from browser to pass through
   })
@@ -73,14 +74,14 @@ const authCheck = (req, res, next) => {
 // if it's already login, send the profile response,
 // otherwise, send a 401 response that the user is not authenticated
 // authCheck before navigating to home page
-app.get("/", authCheck, (req, res) => {
+router.get("/", authCheck, (req, res) => {
   console.log(req.user.name);
   res.status(200).json({
     authenticated: true,
     message: "user successfully authenticated",
     user: req.user,
     cookies: req.cookies
-  }).then(console.log(req.user));
+  });
 });
 
 // Serve up static assets (usually on heroku)
