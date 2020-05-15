@@ -1,6 +1,9 @@
 .user-graph {
     padding: 20px;
     overflow: visible;
+    /* border: 2px solid rgb(63,81,181);
+    border-radius: 20px; */
+
 }
 
 .graphHolder {

@@ -3,19 +3,21 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 //blue: '#4155AD'
 const cardParent = {
-    paddingLeft: '50px',
-    paddingRight: '50px',
-    marginTop: '10px',
-    marginBottom: '10px',
+    border: 'solid 2px rgb(63,81,181',
+    borderRadius: '20px'
+    // paddingLeft: '50px',
+    // paddingRight: '50px'
+    // marginTop: '10px',
+    // marginBottom: '10px',
 }
 
 const cardedStyle = {
-    color: 'black',
-    border: 'rgb(63,81,181)',
-    borderStyle: 'solid',
-    borderRadius: '20px',
-    borderWidth: '2px',
-    backgroundColor: 'white',
+    color: 'rgb(63,81,181)'
+    // border: 'rgb(63,81,181)',
+    // borderStyle: 'solid',
+    // borderRadius: '20px',
+    // borderWidth: '2px',
+    // backgroundColor: 'white'
 }
 
 const badgeStyle = {
@@ -40,7 +42,7 @@ class Badges extends Component {
     render() {
         return (
             <div className="row">
-                <div className="col-lg-4 commit-badges" style={cardParent}>
+                <div className="col-sm-12 col-md-3 commit-badges" style={cardParent}>
                     <div className="carded" style={cardedStyle}>
                         <div className="card-body text-center">
                             <div className="col-sm-12 col-md-3">
@@ -50,28 +52,26 @@ class Badges extends Component {
                             <div className="row">
                                 {(this.context.oneHundredCommits)
                                     ? (
-                                        <div className="col-sm-6 badge text-center" key={1}>
+                                        <div className="col-sm-3 badge text-center" key={1}>
                                             <img src="/assets/images/commit-badge-100.png" alt="100commits" style={badgeStyle} />
                                         </div>
 
                                     ) : <div></div>}
                                 {(this.context.twoFiftyCommits)
                                     ? (
-                                        <div className="col-sm-6 badge text-center" key={2}>
+                                        <div className="col-sm-3 badge text-center" key={2}>
                                             <img src="/assets/images/commit-badge-250.png" alt="250commits" style={badgeStyle} />
                                         </div>
                                     ) : <div></div>}
-                            </div>
-                            <div className="row">
                                 {(this.context.fiveHundredCommits)
                                     ? (
-                                        <div className="badge text-center col-sm-6" key={3}>
+                                        <div className="badge text-center col-sm-3" key={3}>
                                             <img src="/assets/images/commit-badge-500.png" alt="500commits" style={badgeStyle} />
                                         </div>
                                     ) : <div></div>}
                                 {(this.context.oneThousandCommits)
                                     ? (
-                                        <div className="badge text-center col-sm-6" key={3}>
+                                        <div className="badge text-center col-sm-3" key={3}>
                                             <img src="/assets/images/commit-badge-1000.png" alt="1000commits" style={badgeStyle} />
                                         </div>
                                     ) : <div></div>}
@@ -84,7 +84,7 @@ class Badges extends Component {
                 <div className="col-lg-4 followers-badges" style={cardParent}>
                     <div classname="row carded" style={cardedStyle}>
                         <div className="card-body text-center">
-                            <div className="col-sm-12">
+                            <div className="col-sm-12 col-md-4">
                                 <h3>Followers: {this.context.userProfile.followers && this.context.userProfile.followers.totalCount}</h3> </div>
                             <div className="row">
                                 {(this.context.tenFollowers)
@@ -117,28 +117,28 @@ class Badges extends Component {
                         <div className="card-body text-center">
                             <div className="col-sm-12">
                                 <h3>Repos: {this.context.userProfile.repositories && this.context.userProfile.repositories.totalCount}</h3></div>
-                                <div className="row">
-                            {(this.context.tenRepos)
-                                ? (
-                                    <div className="badge text-center col-sm-6" key={3}>
+                            <div className="row">
+                                {(this.context.tenRepos)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
                                             <img src="/assets/images/repo-badge-10.png" alt="10repos" style={badgeStyle} />
                                         </div>
-                                ) : <div></div>}
-                            {(this.context.twentyFiveRepos)
-                                ? (
-                                    <div className="badge text-center col-sm-6" key={3}>
+                                    ) : <div></div>}
+                                {(this.context.twentyFiveRepos)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
                                             <img src="/assets/images/repo-badge-25.png" alt="25repos" style={badgeStyle} />
                                         </div>
-                                ) : <div></div>}
-                                </div>
-                                <div className="row">
-                            {(this.context.fiftyRepos)
-                                ? (
-                                    <div className="badge text-center col-sm-6" key={3}>
+                                    ) : <div></div>}
+                            </div>
+                            <div className="row">
+                                {(this.context.fiftyRepos)
+                                    ? (
+                                        <div className="badge text-center col-sm-6" key={3}>
                                             <img src="/assets/images/repo-badge-50.png" alt="50repos" style={badgeStyle} />
                                         </div>
-                                ) : <div></div>}
-                                </div>
+                                    ) : <div></div>}
+                            </div>
                         </div>
                     </div>
                 </div>
