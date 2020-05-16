@@ -138,13 +138,16 @@ class Battle extends Component {
                         <b>WINNER</b>
                       </div>
                     </Card>
-                  </div> : <div className="col-md-3" style={middleDivStyle}>
+                  </div> : <div></div>}
+                  
+                  {(this.state.secondPlayer.avatarUrl) && (!this.state.winner.avatarUrl)?
+                  <div className="col-md-3" style={middleDivStyle}>
                     <div className="row">
                       <div className="col-sm-12">
                         <button style={buttonStyle} type="submit" className="btn my-2 my-sm-0" onClick={this.battle}>Battle</button>
                       </div>
                     </div>
-                  </div>}
+                  </div> : <div></div>}
 
                 {/* player2div */}
                 {(this.state.secondPlayer.avatarUrl) ?
