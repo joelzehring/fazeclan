@@ -15,7 +15,8 @@ const middleDivStyle = {
 }
 const rowStyle = {
   marginTop: '100px',
-  marginLeft: '50px'
+  marginLeft: '50px',
+  marginBottom:'70px'
 }
 const battleStyle = {
   color: 'rgb(63,81,181)',
@@ -73,6 +74,7 @@ class Battle extends Component {
               </div>
 
               <div className="row" style={rowStyle}>
+                {/* userdiv */}
                 <div className="col-sm-12 col-md-3">
                 <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
@@ -110,17 +112,12 @@ class Battle extends Component {
                       </div>
                       <div className="text-black-50"><h2>{this.state.winner.name}</h2></div>
                       <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
-                        <FontAwesomeIcon
-                          icon={['fas', 'arrow-down']}
-                          className="font-size-sm text-danger mr-2"
-                        />
                     Total Commits: {this.state.winner.contributionsCollection && this.state.winner.contributionsCollection.totalCommitContributions}
                       </div>
                       <div className="text-black-50 text-center opacity-6 pt-3">
                         <b>WINNER</b>
                       </div>
                     </Card>
-
                 </div> : <div className="col-md-3" style={middleDivStyle}>
                   <div className="row">
                     <div className="col-sm-12">
@@ -128,6 +125,8 @@ class Battle extends Component {
                 </div>
                 </div>
                 </div>}
+
+                {/* player2div */}
                 {(this.state.secondPlayer.avatarUrl) ?
                 <div className="col-sm-12 col-md-3">
                 <Card className="card-box border-0 card-shadow-first p-4 mb-4">
