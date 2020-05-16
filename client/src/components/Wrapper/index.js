@@ -10,13 +10,13 @@ const containerStyle = {
   padding: '0px',
   backgroundRepeat: 'round',
   backgroundSize: 'cover',
-  backgroundColor: 'white'
+  backgroundColor: '#E0DFE0'
 }
 
 // Body Styles
 const bodyStyle = {
   // height: '100vh',
-  backgroundColor: 'white'
+  backgroundColor: '#E0DFE0'
 }
 
 // Logo Styles

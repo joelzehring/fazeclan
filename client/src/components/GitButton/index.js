@@ -10,14 +10,19 @@ const buttonStyle = {
     margin: '0 auto',
     display: 'block',
     marginTop: '3%',
-    textAlign: 'center'
+    textAlign: 'center',
+    backgroundColor: 'white',
+    color: 'rgb(63,81,181)'
   };
 
+  const containerStyle = {
+    margin: '0px 6px'
+  }
 export default class GitButton extends Component {
     render() {
 
   return (
-    <div>
+    <div style={containerStyle}>
       <Button href="http://localhost:3001/auth/logout" variant="contained" color="primary" style={buttonStyle}>Logout</Button>
     </div>
   );

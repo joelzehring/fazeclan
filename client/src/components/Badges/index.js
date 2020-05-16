@@ -3,10 +3,12 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 //blue: '#4155AD'
 const cardParent = {
-    border: 'solid 2px rgb(63,81,181',
+    // border: 'solid 2px rgb(63,81,181',
+    boxShadow: '2px 2px 2px 2px rgb(0, 0, 0, 0.2)',
     borderRadius: '20px',
     marginTop: '30px',
-    marginLeft: '20px'
+    marginLeft: '20px',
+    backgroundColor: 'white'
     // paddingLeft: '50px',
     // paddingRight: '50px'
     // marginTop: '10px',

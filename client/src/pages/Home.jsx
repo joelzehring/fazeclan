@@ -15,7 +15,7 @@ import { Redirect } from 'react-router-dom';
 import UserSearch from '../components/UserSearch';
 
 const backgroundStyle = {
-  backgroundColor: 'white'
+  backgroundColor: '#E0DFE0'
 }
 class Home extends Component {
 
