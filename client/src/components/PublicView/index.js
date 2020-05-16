@@ -47,7 +47,7 @@ export default function PublicView() {
             <div style={titleDivStyle}>
             <h1 style={titleStyle}>Git<span style={clubStyle}>Club</span></h1>
             <h2 style={descStyle}>An app for GitHub users that provides insight and data on their activity in a fun social environment.</h2>
-            <a href={"http://localhost:3001/auth/github"}>
+            <a href={"/auth/github"}>
             <img src="/assets/images/githubsignonbutton.png" /></a>
             </div>
         </div>       
