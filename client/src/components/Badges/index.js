@@ -49,7 +49,7 @@ class Badges extends Component {
             <div className="row" style={rowStyle}>
                 <div className="col-sm-12 col-md-3 commit-badges" style={cardParent}>
                     <div className="carded" style={cardedStyle}>
-                        <div className="card-body text-center">
+                        <div className="card-body">
                             <div className="col-sm-12">
                                 <h4>Commits: {this.context.userProfile.contributionsCollection && this.context.userProfile.contributionsCollection.totalCommitContributions}</h4>
                             </div>
@@ -87,7 +87,7 @@ class Badges extends Component {
 
                 <div className="col-sm-12 col-md-3 followers-badges" style={cardParent}>
                     <div classname="carded" style={cardedStyle}>
-                        <div className="card-body text-center">
+                        <div className="card-body">
                             <div className="col-sm-12">
                                 <h4>Followers: {this.context.userProfile.followers && this.context.userProfile.followers.totalCount}</h4> </div>
                             <div className="row">
@@ -119,7 +119,7 @@ class Badges extends Component {
 
                 <div className="col-sm-12 col-md-3 repo-badges" style={cardParent}>
                     <div className="carded" style={cardedStyle}>
-                        <div className="card-body text-center">
+                        <div className="card-body">
                             <div className="col-sm-12">
                                 <h4>Repos: {this.context.userProfile.repositories && this.context.userProfile.repositories.totalCount}</h4></div>
                             <div className="row">
