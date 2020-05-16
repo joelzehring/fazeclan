@@ -23,7 +23,8 @@ class Home extends Component {
     return (
       <div style={backgroundStyle}>
           <AuthContext.Consumer>{(context) => {
-            const { authenticated } = context
+            const { authenticated, userProfile} = context 
+            console.log("context: ", context)
             return (
               authenticated ? 
               <div>
@@ -31,6 +32,7 @@ class Home extends Component {
                 <Wrapper />
                 <div className="container">
                 <Badges />
+                <ActiveUserDisplay userProfile={userProfile} />
                 <PrivateView />
                 </div>
               </div>

@@ -53,6 +53,7 @@ const imageStyles = {
 // Active User's Information
 function ActiveUser(props) {
     const { userProfile } = props;
+    console.log("userprofile: ", userProfile);
     return (
 
         <div className="row" style={rowStyle}>
@@ -67,7 +68,7 @@ function ActiveUser(props) {
 
             </div>
             <div className="col-sm-12 col-md-7" style={removePadding}>
-                <UserGraph />
+                <UserGraph userProfile={userProfile} />
             </div>
             <br />
         </div>
