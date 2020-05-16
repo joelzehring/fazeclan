@@ -40,6 +40,13 @@ class UserSearch extends React.Component {
   }
 
   render() {
+
+    const buttonStyle = {
+      backgroundColor: 'white',
+      boxShadow: '1px 1px 1px 1px rgb(0, 0, 0, 0.2)',
+      color: 'rgb(63,81,181)'
+    }
+
     if (this.state.toSearch === true) {
       return <Redirect to={{
         pathname: '/search',
@@ -50,7 +57,7 @@ class UserSearch extends React.Component {
           <div>
             <form className="form-inline my-2 my-lg-0">
               <input name="search" className="form-control mr-sm-2" type="search" value={this.state.search} onChange={this.handleChange} placeholder="Enter a GitHub username" aria-label="Search" />
-              <button onClick={this.handleSubmit} className="btn btn-outline-dark my-2 my-sm-0" type="submit">Submit</button>
+              <button style={buttonStyle} onClick={this.handleSubmit} className="btn btn-outline-dark my-2 my-sm-0" type="submit">Submit</button>
             </form>
           </div>
         )
