@@ -18,7 +18,7 @@ export default class GitButton extends Component {
 
   return (
     <div>
-      <Button href="http://localhost:3001/auth/logout" variant="contained" color="primary" style={buttonStyle}>Logout</Button>
+      <Button href="/auth/logout" variant="contained" color="primary" style={buttonStyle}>Logout</Button>
     </div>
   );
 }

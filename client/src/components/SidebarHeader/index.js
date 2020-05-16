@@ -7,7 +7,7 @@ import { IconButton, Box, Tooltip } from '@material-ui/core';
 
 import { connect } from 'react-redux';
 
-import projectLogo from '../../images/gitclub_logo_round.svg';
+import projectLogo from '../../images/commmit-badge-250.png';
 
 import { setSidebarToggleMobile } from '../../reducers/ThemeOptions';
 
@@ -40,7 +40,7 @@ const SidebarHeader = props => {
           className="header-logo-wrapper"
           title="Git Club">
           <Link to="/DashboardDefault" className="header-logo-wrapper-link">
-            <IconButton
+            <button
               color="primary"
               size="medium"
               className="header-logo-wrapper-btn">
@@ -49,7 +49,7 @@ const SidebarHeader = props => {
                 alt="Git Club"
                 src={projectLogo}
               />
-            </IconButton>
+            </button>
           </Link>
           <Box className="header-logo-text">Git Club</Box>
         </Box>
