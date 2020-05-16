@@ -8,11 +8,13 @@
 
 .graphHolder {
     /* width: 100vh; */
+    height: 600px;
     box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.2);
     margin-top: 30px;
     margin-left: 20px;
     border-radius: 20px;
     padding: 50px;
+    padding-bottom: 200px;
     background-color: white;
 }
 
