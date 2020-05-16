@@ -16,7 +16,7 @@ const middleDivStyle = {
 const rowStyle = {
   marginTop: '100px',
   marginLeft: '50px',
-  marginBottom:'70px'
+  marginBottom:'60px'
 }
 const battleStyle = {
   color: 'rgb(63,81,181)',
@@ -76,7 +76,7 @@ class Battle extends Component {
               <div className="row" style={rowStyle}>
                 {/* userdiv */}
                 <div className="col-sm-12 col-md-3">
-                <Card className="card-box border-0 card-shadow-first p-4 mb-4">
+                <Card className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
                       <div className="d-flex align-items-center">
                         <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                           <FontAwesomeIcon icon={['far', 'keyboard']} />
@@ -101,7 +101,7 @@ class Battle extends Component {
                 {/* WinnerDiv */}
                 {(this.state.winner.avatarUrl) ?
                 <div className="col-sm-12 col-md-3">
-                    <Card className="card-box border-0 card-shadow-first p-4 mb-4">
+                    <Card className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
                       <div className="d-flex align-items-center">
                         <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                           <FontAwesomeIcon icon={['far', 'keyboard']} />
@@ -111,8 +111,8 @@ class Battle extends Component {
                         </div>
                       </div>
                       <div className="text-black-50"><h2>{this.state.winner.name}</h2></div>
-                      <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
-                    Total Commits: {this.state.winner.contributionsCollection && this.state.winner.contributionsCollection.totalCommitContributions}
+                      <div className="text-black-50">
+                    <h2>{this.state.winner.contributionsCollection && this.state.winner.contributionsCollection.totalCommitContributions} Commits</h2>
                       </div>
                       <div className="text-black-50 text-center opacity-6 pt-3">
                         <b>WINNER</b>
@@ -129,7 +129,7 @@ class Battle extends Component {
                 {/* player2div */}
                 {(this.state.secondPlayer.avatarUrl) ?
                 <div className="col-sm-12 col-md-3">
-                <Card className="card-box border-0 card-shadow-first p-4 mb-4">
+                <Card className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
                       <div className="d-flex align-items-center">
                         <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                           <FontAwesomeIcon icon={['far', 'keyboard']} />
