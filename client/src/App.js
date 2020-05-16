@@ -6,9 +6,10 @@ import AuthContextProvider from './contexts/AuthContext';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Wrapper from './components/Wrapper'
 import NewFooter from './components/NewFooter'
+import Search from './pages/Search';
+
 class App extends Component {
   render() {
-    
     return (
       <AuthContextProvider>
         <Router>
@@ -20,6 +21,13 @@ class App extends Component {
             <Wrapper>
               <Battle />
             </Wrapper> 
+            </Route>
+            <Route path="/search" render={(props) => {
+            return(
+            <Wrapper >
+              <Search {...props}/>
+            </Wrapper>
+            )}}>
             </Route>
           </Switch>
           <NewFooter />

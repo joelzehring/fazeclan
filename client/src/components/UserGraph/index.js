@@ -9,9 +9,9 @@ import CommitGraph from '../CommitGraph';
 class UserGraph extends Component {
 
     render() {
-        const { userProfile } = this.context;
+        const { userProfile } = this.props;
         const { contributionsCollection } = userProfile;
-        console.log("user profile: ", userProfile);
+ 
         let data = [];
         if (userProfile && contributionsCollection) {
             const weeks = userProfile.contributionsCollection.contributionCalendar.weeks;
