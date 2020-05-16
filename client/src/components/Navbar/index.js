@@ -99,7 +99,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       <GitButton />
       <Divider />
-      <Search/>
+ z
     </div>
   );
 

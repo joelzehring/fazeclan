@@ -7,9 +7,10 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import GitButton from '../GitButton/'
-import HomeButton from '../HomeButton'
-import GitBattleButton from '../GitBattleButton'
+import GitButton from '../GitButton/';
+import HomeButton from '../HomeButton';
+import GitBattleButton from '../GitBattleButton';
+import UserSearch from '../UserSearch';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -89,14 +90,16 @@ export default function SearchAppBar() {
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
-              <InputBase
-                placeholder="Search…"
+            <UserSearch />
+              {/* <InputBase
+                placeholder="Search User"
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
                 inputProps={{ 'aria-label': 'search' }}
-              />
+              /> */}
+
             </div>
           </Toolbar>
         </AppBar>

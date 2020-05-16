@@ -10,11 +10,6 @@ class AuthContextProvider extends Component {
     activeUser: "",
     error: null,
     userProfile: {},
-    // badges: {
-    //   oneHundredCommits: false,
-    //   twoHundredCommits: false,
-    //   threeHundredCommits: false
-    // }
   }
 
   componentDidMount() {
@@ -39,8 +34,6 @@ class AuthContextProvider extends Component {
         }, () => {
           API.getGraphQL(this.state.activeUser)
             .then(results => {
-              console.log("results: ", results);
-              // console.log("results: ", results.data.data.user);
               this.setState({
                 userProfile: results.data.data.user
               });

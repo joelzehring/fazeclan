@@ -6,7 +6,6 @@ const router = require("express").Router();
 router.use('/api/gitinfo/:username', function (req, res) {
   // Access Token for github
   const token = process.env['GITHUB_ACCESS_TOKEN'];
-  console.log(token);
   // GraphQL query 
   const query = `
         {
