@@ -9,6 +9,17 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import Search from '../../src/components/Search';
 import API from '../utils/api';
 
+const buttonStyle = {
+  backgroundColor: 'white',
+  boxShadow: '1px 1px 1px 1px rgb(0, 0, 0, 0.2)',
+  color: 'rgb(63,81,181)'
+}
+
+const cardStyle = {
+  boxShadow: '2px 2px 2px 2px rgb(0, 0, 0, 0.2)',
+  borderRadius: '20px'
+}
+
 const inputStyle = {
   width: '300px'
 }
@@ -85,7 +96,7 @@ class Battle extends Component {
               <div className="row" style={rowStyle}>
                 {/* userdiv */}
                 <div className="col-sm-12 col-md-3">
-                  <Card className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
+                  <Card style={cardStyle} className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
                     <div className="d-flex align-items-center">
                       <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                         <FontAwesomeIcon icon={['far', 'keyboard']} />
@@ -110,7 +121,7 @@ class Battle extends Component {
                 {/* WinnerDiv */}
                 {(this.state.winner.avatarUrl) ?
                   <div className="col-sm-12 col-md-3">
-                    <Card className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
+                    <Card style={cardStyle} className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
                       <div className="d-flex align-items-center">
                         <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                           <FontAwesomeIcon icon={['far', 'keyboard']} />
@@ -130,7 +141,7 @@ class Battle extends Component {
                   </div> : <div className="col-md-3" style={middleDivStyle}>
                     <div className="row">
                       <div className="col-sm-12">
-                        <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button>
+                        <button style={buttonStyle} type="submit" className="btn my-2 my-sm-0" onClick={this.battle}>Battle</button>
                       </div>
                     </div>
                   </div>}
@@ -138,7 +149,7 @@ class Battle extends Component {
                 {/* player2div */}
                 {(this.state.secondPlayer.avatarUrl) ?
                   <div className="col-sm-12 col-md-3">
-                    <Card className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
+                    <Card style={cardStyle} className="card-box border-0 card-shadow-first p-4 mb-4 text-center">
                       <div className="d-flex align-items-center">
                         <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                           <FontAwesomeIcon icon={['far', 'keyboard']} />
