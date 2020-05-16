@@ -25,10 +25,10 @@ You will need:
 * Deployed on Heroku
 
 ## Authors
-[**Alfredo Carrillo**](https://github.com/acarrillo2019) 
-[**Joel Zehring**](https://github.com/joelzehring)
-[**Kimberly Case**](https://github.com/kimberlycase91)
-[**Phil Cowan**](https://github.com/phil4lif)
+[**Alfredo Carrillo**](https://github.com/acarrillo2019) | 
+[**Joel Zehring**](https://github.com/joelzehring) | 
+[**Kimberly Case**](https://github.com/kimberlycase91) | 
+[**Phil Cowan**](https://github.com/phil4lif) | 
 [**Rachel Sipes**](https://github.com/sharkrachel)
 
 You can also see the list of [contributors](https://github.com/joelzehring/fazeclan/graphs/contributors)
