@@ -45,6 +45,13 @@ const CommitGraph = (props) => {
             .y(function (d) { return yScale(d.y); })
             .curve(d3.curveMonotoneX) // apply smoothing to the line
 
+            const area = d3.area()
+            .x(function (d) { return xScale(d.x); })
+            .y0(height)
+            .y1(function (d) { return yScale(d.y); })
+            .curve(d3.curveMonotoneX) // apply smoothing to the line
+            
+
         // Setup SVG
         svg
             .attr("width", width + margin.left + margin.right + 100)
@@ -63,6 +70,18 @@ const CommitGraph = (props) => {
             .attr("class", "y axis")
             .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
+            const pathFill = svg.append("path")
+            // .style("stroke", "#3f51b5")
+            .style("fill", "#85A3FF")
+            .style("opacity", "0")
+            .datum(dataset)
+            .attr("class", "line") // Assign a class for styling 
+            .transition()
+            .delay(1950)
+            .duration(5000)
+            .style("opacity", ".4")
+            .attr("d", area) // Calls the line generator 
+
         // Add the path (the line)
         const path = svg.append("path")
             .style("stroke", "#3f51b5")
@@ -71,6 +90,8 @@ const CommitGraph = (props) => {
             .datum(dataset)
             .attr("class", "line") // Assign a class for styling 
             .attr("d", line) // Calls the line generator 
+
+
 
 
 
@@ -95,8 +116,8 @@ const CommitGraph = (props) => {
             .attr("stroke-dasharray", totalLength + " " + totalLength)
             .attr("stroke-dashoffset", totalLength)
             .transition()
-            .delay(950)
-            .duration(10000)
+            .delay(300)
+            .duration(5000)
             .attr("stroke-dashoffset", 0)
         // .ease("easeLinear");
 

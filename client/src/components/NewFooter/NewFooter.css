@@ -3,7 +3,9 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: white;
+    /* background-color: white; */
+    background-color: #E0DFE0;
+
     color: black;
     text-align: center;
     font-size: 20px;

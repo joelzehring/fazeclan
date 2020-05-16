@@ -6,10 +6,9 @@ import { AuthContext } from "../../contexts/AuthContext";
 import UserGraph from '../UserGraph'
 const activeUserStyle = {
     color: 'rgb(63,81,181)',
-    border: 'rgb(63,81,181)',
-    borderStyle: 'solid',
+    boxShadow: '2px 2px 2px 2px rgb(0, 0, 0, 0.2)',
+    backgroundColor: 'white',
     borderRadius: '20px',
-    borderWidth: '2px',
     padding: '50px',
     marginTop: '30px',
     marginLeft: '20px',
