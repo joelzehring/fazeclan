@@ -22,10 +22,12 @@ class App extends Component {
               <Battle />
             </Wrapper> 
             </Route>
-            <Route path="/search" >
-            <Wrapper>
-              <Search />
-            </Wrapper> 
+            <Route path="/search" render={(props) => {
+            return(
+            <Wrapper >
+              <Search {...props}/>
+            </Wrapper>
+            )}}>
             </Route>
           </Switch>
           <NewFooter />

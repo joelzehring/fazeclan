@@ -31,7 +31,6 @@ class Home extends Component {
                 <Wrapper />
                 <div className="container">
                 <Badges />
-                <UserSearch />
                 <PrivateView />
                 </div>
               </div>

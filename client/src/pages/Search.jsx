@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 import '../App.css';
+// import { AuthContext } from '../contexts/AuthContext';
+// import PublicView from '../components/PublicView/';
+// import PrivateView from '../components/PrivateView';
+// import UserGraph from "../components/UserGraph";
+// import ActiveUserDisplay from "../components/ActiveUserDisplay";
+// import TopUser from "../components/TopUser";
+// import UserFavorites from "../components/UserFavorites";
+// import Wrapper from "../components/Wrapper";
+// import Badges from "../components/Badges";
+// import API from '../utils/api';
+// import { Redirect } from 'react-router-dom';
+// import UserSearch from '../components/UserSearch';
+import ActiveUserDisplay from '../components/ActiveUserDisplay'
 
 
 class Search extends Component {
@@ -46,8 +59,15 @@ class Search extends Component {
     }
 
     render() {
+        console.log("props: ", this.props);
+        const { location } = this.props;
+        const user = location.state.searchedUser;
+        console.log("user: ", user);
         return (
-            <div></div>
+            <div>
+                <ActiveUserDisplay userProfile={user} />
+
+            </div>
         )
     }
 }

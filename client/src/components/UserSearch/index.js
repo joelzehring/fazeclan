@@ -20,6 +20,9 @@ class UserSearch extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    React.createContext({
+      activeUser: this.state.search
+    });
     API.getGraphQL(this.state.search)
       .then((result) => {
 
@@ -29,6 +32,9 @@ class UserSearch extends React.Component {
         this.setState({
           toSearch: true
         })
+        // React.createContext({
+
+        // }) 
         console.log("search result: ", this.state.searchedUser);
       })
   }
