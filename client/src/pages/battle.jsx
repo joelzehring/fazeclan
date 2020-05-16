@@ -55,20 +55,19 @@ class Battle extends Component {
   render() {
     return (
       <AuthContext.Consumer>
-
-
         {(context) => {
           const { userProfile } = context;
-
           return (
-
-            <div className="container fluid">
-              <Fragment>
-
-                {/* User Card */}
-                <Grid container spacing={6}>
-                  <Grid item xs={12} sm={4} lg={4}>
-                    <Card className="card-box border-0 card-shadow-first p-4 mb-4">
+            <div className="container">
+              <div className="row">
+              <h2>Challenge a Github user to GitBattle</h2>
+                  <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} search={this.state.search} />
+              </div>
+              <div className="row">
+              </div>
+              <div className="row">
+                <div className="col-sm-12 col-md-3">
+                <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
                         <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                           <FontAwesomeIcon icon={['far', 'keyboard']} />
@@ -86,16 +85,38 @@ class Battle extends Component {
                     {/* Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions} */}
                       </div>
                       <div className="text-black-50 text-center opacity-6 pt-3">
-                        <b>Fighter One</b>
+                        <b></b>
                       </div>
                     </Card>
-                  </Grid>
-
-
-                  {/* Github User */}
-                  {(this.state.secondPlayer.avatarUrl) ?
-                  <Grid item xs={12} sm={4} lg={4}>
+                </div>
+                {(this.state.winner.avatarUrl) ?
+                <div className="col-sm-12 col-md-3">
                     <Card className="card-box border-0 card-shadow-first p-4 mb-4">
+                      <div className="d-flex align-items-center">
+                        <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
+                          <FontAwesomeIcon icon={['far', 'keyboard']} />
+                        </div>
+                        <div className="profile-pic-holder" >
+                          <img className='card-img' src={this.state.winner.avatarUrl} alt="Profile pic" />
+                        </div>
+                      </div>
+                      <div className="text-black-50"><h2>{this.state.winner.name}</h2></div>
+                      <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
+                        <FontAwesomeIcon
+                          icon={['fas', 'arrow-down']}
+                          className="font-size-sm text-danger mr-2"
+                        />
+                    Total Commits: {this.state.winner.contributionsCollection && this.state.winner.contributionsCollection.totalCommitContributions}
+                      </div>
+                      <div className="text-black-50 text-center opacity-6 pt-3">
+                        <b>WINNER</b>
+                      </div>
+                    </Card>
+
+                </div> : <div className="col-md-3">              <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button></div>}
+                {(this.state.secondPlayer.avatarUrl) ?
+                <div className="col-sm-12 col-md-3">
+                <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
                         <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
                           <FontAwesomeIcon icon={['far', 'keyboard']} />
@@ -113,14 +134,72 @@ class Battle extends Component {
                     {/* Total Commits: {(this.state.secondPlayer) ? this.state.secondPlayer.contributionsCollection && this.state.secondPlayer.contributionsCollection.totalCommitContributions : ""} */}
                       </div>
                       <div className="text-black-50 text-center opacity-6 pt-3">
+                        <b></b>
+                      </div>
+                    </Card>
+                  </div>: <div></div>}
+              </div>
+              <Fragment>
+              {/* <Grid container spacing={6}>
+                  <h2>Compare your stats to another Github user:</h2>
+                  <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} search={this.state.search} />
+                </Grid> */}
+                {/* User Card */}
+                {/* <Grid container spacing={6}>
+                  <Grid item xs={12} sm={4} lg={4}>
+                    <Card className="card-box border-0 card-shadow-first p-4 mb-4">
+                      <div className="d-flex align-items-center">
+                        <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
+                          <FontAwesomeIcon icon={['far', 'keyboard']} />
+                        </div>
+                        <div className="profile-pic-holder" >
+                          <img className='card-img' src={userProfile.avatarUrl} alt="Profile pic" />
+                        </div>
+                      </div>
+                      <div className="text-black-50"><h2>{userProfile.name}</h2></div>
+                      <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
+                        <FontAwesomeIcon
+                          icon={['fas', 'arrow-down']}
+                          className="font-size-sm text-danger mr-2"
+                        />
+                    {/* Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions} */}
+                      {/* </div>
+                      <div className="text-black-50 text-center opacity-6 pt-3">
+                        <b>Fighter One</b>
+                      </div>
+                    </Card>
+                  </Grid> */} 
+
+
+                  {/* Github User */}
+                  {/* {(this.state.secondPlayer.avatarUrl) ?
+                  <Grid item xs={12} sm={4} lg={4}>
+                    <Card className="card-box border-0 card-shadow-first p-4 mb-4">
+                      <div className="d-flex align-items-center">
+                        <div className="d-40 rounded-circle bg-first text-white text-center font-size-lg mr-3 text-center d-flex align-items-center pt-3 justify-content-center">
+                          <FontAwesomeIcon icon={['far', 'keyboard']} />
+                        </div>
+                        <div className="profile-pic-holder" >
+                          <img className='card-img' src={(this.state.secondPlayer != null) ? this.state.secondPlayer.avatarUrl : "User not found"} alt="Profile pic" />
+                        </div>
+                      </div>
+                      <div className="text-black-50"><h2>{(this.state.secondPlayer != null) ? this.state.secondPlayer.name : ""}</h2></div>
+                      <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
+                        <FontAwesomeIcon
+                          icon={['fas', 'arrow-down']}
+                          className="font-size-sm text-danger mr-2"
+                        />
+                    {/* Total Commits: {(this.state.secondPlayer) ? this.state.secondPlayer.contributionsCollection && this.state.secondPlayer.contributionsCollection.totalCommitContributions : ""} */}
+                      {/* </div>
+                      <div className="text-black-50 text-center opacity-6 pt-3">
                         <b>Fighter Two</b>
                       </div>
                     </Card>
-                  <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button>
-                  </Grid> : <div></div>}
+                  // <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button>
+                  </Grid> : <div></div>} */} 
 
                   {/*Winner Card */}
-                  {(this.state.winner.avatarUrl) ? 
+                  {/* {(this.state.winner.avatarUrl) ? 
                   <Grid item xs={12} sm={4} lg={4}>
                     <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
@@ -143,13 +222,10 @@ class Battle extends Component {
                         <b>WINNER</b>
                       </div>
                     </Card>
-                  </Grid> : <div></div>}
-                </Grid>
+                  </Grid> : <div></div>} */}
+                {/* </Grid> */}
 
-                <Grid container spacing={6}>
-                  <h2>Compare your stats to another Github user:</h2>
-                  <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} search={this.state.search} />
-                </Grid>
+
               </Fragment>
             </div>
           );
