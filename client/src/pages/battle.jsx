@@ -10,8 +10,17 @@ import Search from '../../src/components/Search';
 import API from '../utils/api';
 
 
-
-
+const middleDivStyle = {
+  textAlign: 'center'
+}
+const rowStyle = {
+  marginTop: '100px',
+  marginLeft: '50px'
+}
+const battleStyle = {
+  color: 'rgb(63,81,181)',
+  // fontSize: '64px'
+}
 class Battle extends Component {
 
   state = {
@@ -59,13 +68,12 @@ class Battle extends Component {
           const { userProfile } = context;
           return (
             <div className="container">
-              <div className="row">
-              <h2>Challenge a Github user to GitBattle</h2>
+              <div className="row" style={rowStyle}>
+              <h2>Challenge a Github user to Git<span style={battleStyle}>Battle</span></h2>
                   <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} search={this.state.search} />
               </div>
-              <div className="row">
-              </div>
-              <div className="row">
+
+              <div className="row" style={rowStyle}>
                 <div className="col-sm-12 col-md-3">
                 <Card className="card-box border-0 card-shadow-first p-4 mb-4">
                       <div className="d-flex align-items-center">
@@ -89,6 +97,7 @@ class Battle extends Component {
                       </div>
                     </Card>
                 </div>
+                {/* WinnerDiv */}
                 {(this.state.winner.avatarUrl) ?
                 <div className="col-sm-12 col-md-3">
                     <Card className="card-box border-0 card-shadow-first p-4 mb-4">
@@ -113,7 +122,13 @@ class Battle extends Component {
                       </div>
                     </Card>
 
-                </div> : <div className="col-md-3">              <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button></div>}
+                </div> : <div className="col-md-3" style={middleDivStyle}>
+                  <div className="row">
+                    <div className="col-sm-12">
+                  <button type="submit" className="btn btn-outline-dark my-2 my-sm-0" onClick={this.battle}>Battle</button>
+                </div>
+                </div>
+                </div>}
                 {(this.state.secondPlayer.avatarUrl) ?
                 <div className="col-sm-12 col-md-3">
                 <Card className="card-box border-0 card-shadow-first p-4 mb-4">
