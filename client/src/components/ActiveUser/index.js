@@ -1,19 +1,9 @@
 import React from 'react'
 import { AuthContext } from "../../contexts/AuthContext";
 import './ActiveUser.css'
-// Overall Page Style
 
-// Active User's Information
+//This Component Displays the Signed in Users photo Name and github Bio
 function ActiveUser() {
-
-    const imgStyle = {
-        width: 200,
-        display: "block",
-        marginLeft: "auto",
-        marginRight: "auto",
-        borderRadius: 100,
-    }
-
     return (
         <AuthContext.Consumer>
             {(context) => {
