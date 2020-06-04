@@ -1,5 +1,6 @@
 import React from 'react'
 import { AuthContext } from "../../contexts/AuthContext";
+import './ActiveUser.css'
 // Overall Page Style
 
 // Active User's Information
@@ -25,7 +26,7 @@ function ActiveUser() {
                         </div>
                         <div className="col-sm-12">
                             <div className="profile-pic-holder" >
-                                <img style={imgStyle} className="card-img" src={userProfile.avatarUrl} alt="Profile pic" />
+                                <img className="card-img" src={userProfile.avatarUrl} alt="Profile pic" />
                             </div>
                         </div>
                         <br />
