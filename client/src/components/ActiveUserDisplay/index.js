@@ -4,99 +4,27 @@ import GitBattleButton from '../UserForm/GitBattleButton';
 import Button from '@material-ui/core/Button';
 import { AuthContext } from "../../contexts/AuthContext";
 import UserGraph from '../UserGraph'
-const activeUserStyle = {
-    color: 'rgb(63,81,181)',
-    boxShadow: '2px 2px 2px 2px rgb(0, 0, 0, 0.2)',
-    backgroundColor: 'white',
-    borderRadius: '20px',
-    padding: '50px',
-    marginTop: '30px',
-    marginLeft: '20px',
-    // marginRight: '20px',
-    marginBottom: '10px'
-    // width: '30%'
-}
-const removePadding = {
-    padding: '0px',
-    marginRight: '40px'
-}
+import './ActiveUserDisplay.css'
 
-const activeUserInfoStyle = {
-    textAlign: 'left'
-};
-const rowStyle = {
-    marginBottom: '50px'
-}
-
-// Buttons Parent Style
-const buttonParentStyle = {
-    marginBottom: '28px'
-};
-
-// Temporary button Styles
-const buttonStyles = {
-    position: 'relative',
-    width: '100%',
-    margin: '0 auto',
-    display: 'block',
-    marginTop: '3%'
-};
-
-// Image Styles
-const imageStyles = {
-    position: 'relative',
-    // width: '50%',
-    margin: '0 auto'
-};
-
-// Active User's Information
+// Active User's name profile and photo
 function ActiveUser(props) {
     const { userProfile } = props;
     console.log("userprofile: ", userProfile);
     return (
 
-        <div className="row" style={rowStyle}>
-            <div className="col-sm-12 col-md-3" style={activeUserStyle}>
-                {/* {console.log(userProfile.name)} */}
+        <div className="row rs">
+            <div className="col-sm-12 col-md-3 aus">
                 <h2>{userProfile.name}</h2>
-                {/* <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3> */}
                 <p>{userProfile.bio}</p>
-                <div className="profile-pic-holder" style={imageStyles}>
+                <div className="profile-pic-holder">
                     <img className='card-img' src={userProfile.avatarUrl} alt="Profile pic" />
                 </div>
-
             </div>
-            <div className="col-sm-12 col-md-7" style={removePadding}>
+            <div className="col-sm-12 col-md-7 rp">
                 <UserGraph userProfile={userProfile} />
             </div>
             <br />
         </div>
-
     )
-    // return (
-    //     <AuthContext.Consumer>
-    //         {(context) => {
-    //             const { userProfile } = context;
-    //             return (
-    //                 <div className="row" style={rowStyle}>
-    //                     <div className="col-sm-12 col-md-3"  style={activeUserStyle}>
-    //                         {/* {console.log(userProfile.name)} */}
-    //                         <h2>{userProfile.name}</h2>
-    //                         {/* <h3>Total Commits: {userProfile.contributionsCollection && userProfile.contributionsCollection.totalCommitContributions}</h3> */}
-    //                         <p>{userProfile.bio}</p>
-    //                         <div className="profile-pic-holder" style={imageStyles}>
-    //                             <img className='card-img' src={userProfile.avatarUrl} alt="Profile pic" />
-    //                         </div>
-
-    //                     </div>                           
-    //                      <div className="col-sm-12 col-md-7" style={removePadding}>
-    //                             <UserGraph />
-    //                         </div>
-    //                     <br />
-    //                 </div>
-    //             )
-    //         }}
-    //     </AuthContext.Consumer>
-    // )
 }
 export default ActiveUser;

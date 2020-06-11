@@ -22,7 +22,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
 
-import ActiveUser from '../ActiveUser';
+// import ActiveUser from '../ActiveUser';
 import Search from '../Search';
 import SignInLink from '../SignInLink';
 import HomeButton from '../HomeButton';
@@ -91,7 +91,7 @@ function ResponsiveDrawer(props) {
       <div className={classes.toolbar} />
       <Divider />
       <Divider />
-      <ActiveUser />
+      {/* <ActiveUser /> */}
       <Divider />
       <HomeButton />
       <Divider />

@@ -30,7 +30,6 @@ class App extends Component {
             )}}>
             </Route>
           </Switch>
-          <NewFooter />
         </Router>
       </AuthContextProvider>
       

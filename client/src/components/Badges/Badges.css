@@ -1,0 +1,21 @@
+.rs {
+    margin-top: 50px;
+}
+
+.cardparent {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 20px;
+    background-color: white;
+}
+
+.carded {
+    color: rgb(63,81,181);
+}
+
+.badge {
+    display: inline;
+    width: 65px;
+    margin: 10px;
+}

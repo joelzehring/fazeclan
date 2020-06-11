@@ -13,7 +13,7 @@ import API from '../utils/api';
 import Search from '../components/Search';
 import { Redirect } from 'react-router-dom';
 import UserSearch from '../components/UserSearch';
-
+import NewFooter from '../components/NewFooter';
 const backgroundStyle = {
   backgroundColor: '#E0DFE0'
 }
@@ -34,10 +34,14 @@ class Home extends Component {
                 <Badges />
                 <ActiveUserDisplay userProfile={userProfile} />
                 <PrivateView />
+                <NewFooter />
                 </div>
               </div>
               </div>
-              : <PublicView />
+              : <div> 
+                <PublicView />
+              <NewFooter />
+              </div>
             )
           }}
           </AuthContext.Consumer>
